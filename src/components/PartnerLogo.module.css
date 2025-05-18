@@ -1,0 +1,8 @@
+.logoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 1; /* Ajusta la relación de aspecto según tus logos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

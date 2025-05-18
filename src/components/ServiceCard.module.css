@@ -1,0 +1,37 @@
+.card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Ajusta la relación de aspecto según tus imágenes */
+  display: flex; /* Habilita Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.title {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.description {
+  padding: 0 1rem 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.card :global(.button) { /* Apply styles to the Button component within the card */
+  margin: 1rem auto;
+  width: fit-content;
+}

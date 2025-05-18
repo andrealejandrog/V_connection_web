@@ -1,0 +1,278 @@
+/* page.module.css */
+
+.main {
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Hero Section - Sin espacio en blanco */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  position: relative;
+}
+
+.heroContent {
+  padding: 4rem;
+  z-index: 2;
+}
+
+.heroText {
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.titleGradient {
+  background: linear-gradient(90deg, #818cf8 0%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.heroImageWrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(15, 23, 42, 0.7) 0%, transparent 100%);
+}
+
+/* About Section */
+.section {
+  padding: 8rem 4rem;
+}
+
+.sectionDark {
+  background: #f8fafc;
+  padding: 8rem 4rem;
+}
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutText {
+  padding-right: 2rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.aboutDescription {
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.aboutImage {
+  position: relative;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+}
+
+/* Values Section */
+.partners {
+  padding: 6rem 4rem;
+  background: #ffffff;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionBadge {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #6366f1;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.valueCard {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+}
+
+.valueIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.valueTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+/* Features List */
+.featuresList {
+  margin: 2rem 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.featureIcon {
+  font-size: 1.5rem;
+  color: #6366f1;
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ctaButton {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.buttonArrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #818cf8;
+  border: 2px solid #818cf8;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.secondaryButton:hover {
+  background: rgba(129, 140, 248, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .heroContent {
+    padding: 2rem;
+    order: 2;
+  }
+  
+  .heroImageWrapper {
+    height: 50vh;
+    order: 1;
+  }
+  
+  .aboutContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .aboutImage {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .section,
+  .sectionDark,
+  .partners {
+    padding: 4rem 2rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

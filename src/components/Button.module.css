@@ -1,0 +1,30 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.primary {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.secondary {
+  background: transparent;
+  color: #6366f1;
+  border: 2px solid #6366f1;
+}
+
+.secondary:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
