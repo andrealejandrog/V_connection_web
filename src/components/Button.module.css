@@ -1,30 +1,92 @@
+/* Button.module.css */
 .button {
+  /* Estilos base para todos los botones */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 600;
+  font-size: 1rem;
   transition: all 0.3s ease;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
 }
 
-.primary {
+/* Variante solid (botón primario) */
+.solid {
   background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
   color: white;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.1);
 }
 
-.primary:hover {
+.solid:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
 
-.secondary {
+.solid:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(99, 102, 241, 0.2);
+}
+
+/* Variante outline (botón secundario) */
+.outline {
   background: transparent;
   color: #6366f1;
   border: 2px solid #6366f1;
+  box-shadow: none;
 }
 
-.secondary:hover {
+.outline:hover {
   background: rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(99, 102, 241, 0.1);
+}
+
+.outline:active {
+  transform: translateY(0);
+}
+
+/* Variante text (botón tipo enlace) */
+.text {
+  background: transparent;
+  color: #6366f1;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: none;
+}
+
+.text:hover {
+  text-decoration: underline;
+  background: rgba(99, 102, 241, 0.05);
+  transform: none;
+}
+
+/* Estado disabled para todas las variantes */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Tamaños adicionales (opcional) */
+.small {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.large {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+}
+
+/* Estilos para íconos en botones */
+.button .icon {
+  margin-right: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }

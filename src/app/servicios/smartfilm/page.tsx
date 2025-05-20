@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import styles from './SmartFilm.module.css';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 export default function SmartFilmPage() {
   return (

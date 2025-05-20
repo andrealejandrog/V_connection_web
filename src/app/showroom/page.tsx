@@ -41,13 +41,13 @@ export default function ShowroomPage() {
   // Auto-rotación
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % showroomImages.length);
     }, 5000);
-    
+
     return () => clearInterval(interval);
-  }, [isAutoPlaying, showroomImages.length]);
+  }, [isAutoPlaying]);
 
   const goToPrev = () => {
     setIsAutoPlaying(false);

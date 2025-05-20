@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from './page.module.css';
-import ImageComponent from '@/components/ImageComponent';
+import Image from 'next/image';
 import SectionTitle from '@/components/SectionTitle';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
@@ -10,7 +10,7 @@ import Button from '@/components/Button';
 export default function AboutPage() {
   return (
     <main className={styles.main}>
-      {/* Hero Section - Eliminado el espacio en blanco */}
+      {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
@@ -41,7 +41,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className={styles.heroImageWrapper}>
-          <ImageComponent
+          <Image
             src="/images/showroom-vitrea.jpg"
             alt="Showroom VITREA"
             fill
@@ -76,7 +76,7 @@ export default function AboutPage() {
             </Button>
           </div>
           <div className={styles.aboutImage}>
-            <ImageComponent
+            <Image
               src="/images/equipo-vitrea.jpg"
               alt="Equipo VITREA"
               fill
@@ -117,7 +117,7 @@ export default function AboutPage() {
       <section className={`${styles.sectionDark} ${styles.sectionAnimation}`}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutImage}>
-            <ImageComponent
+            <Image
               src="/images/showroom-interior.jpg"
               alt="Interior del Showroom VITREA"
               fill

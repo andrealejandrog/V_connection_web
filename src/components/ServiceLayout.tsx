@@ -2,12 +2,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/components/Button';
 import styles from './ServiceLayout.module.css';
 
 interface ServiceLayoutProps {
   title: string;
-  description: string;
   heroImage: string;
   sections: Array<{
     image?: string;
@@ -17,7 +15,7 @@ interface ServiceLayoutProps {
   }>;
 }
 
-const ServiceLayout = ({ title, description, heroImage, sections }: ServiceLayoutProps) => {
+const ServiceLayout = ({ title, heroImage, sections }: ServiceLayoutProps) => {
   return (
     <div className={styles.serviceContainer}>
       <section className={styles.heroSection}>

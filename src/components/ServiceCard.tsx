@@ -3,6 +3,7 @@
 import React from 'react';
 import styles from './ServiceCard.module.css';
 import Button from './Button';
+import Image from 'next/image'; // Importa Image
 
 interface ServiceCardProps {
   title: string;
@@ -26,16 +27,18 @@ const ServiceCard = ({
   return (
     <div className={`${styles.card} ${styles[variant]}`}>
       <div className={styles.imageContainer}>
-        <img 
-          src={imageUrl} 
-          alt={imageAlt} 
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
           className={styles.image}
+          fill
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
-      <Button 
-        href={buttonLink} 
+      <Button
+        href={buttonLink}
         className={styles.button}
         ariaLabel={`Ver más sobre ${title}`}
       >

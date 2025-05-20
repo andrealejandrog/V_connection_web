@@ -40,24 +40,31 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
     <div className={`showroom-gallery ${isFullscreen ? 'fullscreen' : ''}`}>
       <h2>SHOWROOM VIRTUAL</h2>
       <p>Conoce nuestro showroom sin salir de la comodidad de tu hogar</p>
-      
+
       <div className="carousel-container">
         <button className="nav-button prev" onClick={goToPrev} aria-label="Anterior">
           &lt;
         </button>
-        
+
         <div className="carousel">
           {images.map((img, index) => (
-            <div 
+            <div
               key={index}
-              className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
+              className="carousel-item" // Eliminamos la clase 'active' de aquí
+              style={{
+                // *** CORRECCIÓN CLAVE: Aplicar el transform como estilo en línea ***
+                transform: `translateX(${-100 * currentIndex}%)`,
+                opacity: index === currentIndex ? 1 : 0, // Controlar la opacidad para el activo
+                transition: 'opacity 0.5s ease, transform 0.5s ease', // Mantener la transición
+                zIndex: index === currentIndex ? 1 : 0, // Para que el elemento activo esté encima
+              }}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover"
-                priority={index === 0}
+                className="object-cover" // Asume que esta clase de tailwind o CSS maneja object-fit
+                priority={index === 0} // Cargar la primera imagen con prioridad
               />
               {img.description && (
                 <div className="image-description">
@@ -67,12 +74,12 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
             </div>
           ))}
         </div>
-        
+
         <button className="nav-button next" onClick={goToNext} aria-label="Siguiente">
           &gt;
         </button>
       </div>
-      
+
       <div className="controls">
         <button onClick={toggleFullscreen} className="fullscreen-button">
           {isFullscreen ? 'Salir de pantalla completa' : 'Ver en pantalla completa'}
@@ -88,11 +95,13 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           ))}
         </div>
       </div>
-      
+
       <h4>Experiencia Visual</h4>
       <p>Recuerda que puedes ver las imágenes en pantalla completa para una mejor experiencia.</p>
-      
+
+      {/* Styles JSX (sigue siendo necesario para el resto de los estilos) */}
       <style jsx>{`
+        /* Tus estilos generales para showroom-gallery y sus hijos */
         .showroom-gallery {
           max-width: 1200px;
           margin: 0 auto;
@@ -100,7 +109,7 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           text-align: center;
           position: relative;
         }
-        
+
         .showroom-gallery.fullscreen {
           position: fixed;
           top: 0;
@@ -112,19 +121,19 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           overflow: auto;
           padding: 2rem;
         }
-        
+
         h2 {
           font-size: 2.5rem;
           margin-bottom: 1rem;
           color: #333;
         }
-        
+
         p {
           font-size: 1.1rem;
           color: #666;
           margin-bottom: 2rem;
         }
-        
+
         .carousel-container {
           position: relative;
           display: flex;
@@ -132,7 +141,7 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           justify-content: center;
           margin: 2rem 0;
         }
-        
+
         .carousel {
           width: 100%;
           height: 500px;
@@ -141,23 +150,33 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           border-radius: 12px;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
-        
+
         .carousel-item {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          opacity: 0;
-          transition: opacity 0.5s ease, transform 0.5s ease;
-          transform: translateX(${(currentIndex) => -100 * currentIndex}%);
+          /*
+            Eliminamos 'opacity' y 'transform' de aquí,
+            porque ahora los controlamos con inline styles.
+            La transición sí la mantenemos aquí para que aplique
+            al transform y opacity que cambian dinámicamente.
+          */
+          /* opacity: 0; */
+          /* transform: translateX(...); */
         }
-        
-        .carousel-item.active {
+
+        /*
+          Si quieres usar 'active' para alguna otra cosa, como un z-index o sombra,
+          puedes mantenerlo. Pero el transform y opacity ya están en inline style.
+        */
+        /* .carousel-item.active {
           opacity: 1;
           transform: translateX(0);
-        }
-        
+        } */
+
+
         .nav-button {
           position: absolute;
           background: rgba(255, 255, 255, 0.7);
@@ -173,20 +192,20 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           justify-content: center;
           transition: all 0.3s ease;
         }
-        
+
         .nav-button:hover {
           background: rgba(255, 255, 255, 0.9);
           transform: scale(1.1);
         }
-        
+
         .prev {
           left: 20px;
         }
-        
+
         .next {
           right: 20px;
         }
-        
+
         .image-description {
           position: absolute;
           bottom: 0;
@@ -197,7 +216,7 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           padding: 1rem;
           text-align: center;
         }
-        
+
         .controls {
           display: flex;
           flex-direction: column;
@@ -205,7 +224,7 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           gap: 1rem;
           margin-top: 1rem;
         }
-        
+
         .fullscreen-button {
           background: #333;
           color: white;
@@ -216,17 +235,17 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           transition: all 0.3s ease;
           font-weight: 500;
         }
-        
+
         .fullscreen-button:hover {
           background: #555;
           transform: translateY(-2px);
         }
-        
+
         .indicators {
           display: flex;
           gap: 0.5rem;
         }
-        
+
         .indicator {
           width: 12px;
           height: 12px;
@@ -236,23 +255,23 @@ export default function ShowroomGallery({ images }: ShowroomGalleryProps) {
           cursor: pointer;
           transition: all 0.3s ease;
         }
-        
+
         .indicator.active {
           background: #333;
           transform: scale(1.2);
         }
-        
+
         h4 {
           font-size: 1.8rem;
           margin: 2rem 0 1rem;
           color: #333;
         }
-        
+
         @media (max-width: 768px) {
           .carousel {
             height: 350px;
           }
-          
+
           h2 {
             font-size: 2rem;
           }

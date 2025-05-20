@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import styles from './Alarmas.module.css';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 export default function AlarmasPage() {
   return (
@@ -81,7 +81,7 @@ export default function AlarmasPage() {
           <div className={styles.featureCard}>
             <h6 className={styles.cardTitle}>Cierre automático</h6>
             <p className={styles.cardText}>
-              Dile adiós a ese "Espera, ¿cerré la puerta esta mañana?" momento gracias a la función de bloqueo automático de Smart Lock. El giroscopio y el chip geomagnético detectan cuando tu puerta está desbloqueada y activan el bloqueo después de un tiempo establecido.
+              Dile adiós a ese &quot;Espera, ¿cerré la puerta esta mañana?&quot; momento gracias a la función de bloqueo automático de Smart Lock. El giroscopio y el chip geomagnético detectan cuando tu puerta está desbloqueada y activan el bloqueo después de un tiempo establecido.
             </p>
             <div className={styles.cardVideo}>
               <video controls className={styles.video}>

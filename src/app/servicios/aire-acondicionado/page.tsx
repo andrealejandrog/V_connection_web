@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import styles from './AireAcondicionado.module.css';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 export default function AireAcondicionadoPage() {
   return (
@@ -64,7 +64,7 @@ export default function AireAcondicionadoPage() {
             <h6 className={styles.cardTitle}>Disfruta del ambiente</h6>
             <p className={styles.cardText}>
               Asegúrate de que tus <strong>termostatos inteligentes</strong> estén ajustados a la temperatura correcta mientras estás fuera de casa.<br />
-              Controla tu sistema de aire acondicionado con solo tocar el termostato o mediante la aplicación "ControlPro" de VITREA.
+              Controla tu sistema de aire acondicionado con solo tocar el termostato o mediante la aplicación &quot;ControlPro&quot; de VITREA.
             </p>
           </div>
 
