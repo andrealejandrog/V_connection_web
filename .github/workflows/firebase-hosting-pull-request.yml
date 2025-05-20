@@ -18,6 +18,7 @@ jobs:
           projectId: v-connection-webpage
           entryPoint: ./
           publicDir: out
+          target: v-connection-webpage # Explicitly target the hosting site ID
 
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
