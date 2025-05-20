@@ -8,9 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build # This will now include the export
+      - run: npm ci && npm run build
+
       - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/github-actions/hosting/deploy@v0
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           apiKey: ${{ secrets.FIREBASE_API_KEY }}
           projectId: v-connection-webpage
