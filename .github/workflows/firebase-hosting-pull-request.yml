@@ -1,12 +1,15 @@
-name: Deploy to Firebase Hosting on PR
-on: pull_request
-permissions:
-  checks: write
-  contents: read
-  pull-requests: write
+name: Deploy to Firebase Hosting on Push
+on:
+  push:
+    branches:
+      - main # Or your main development branch
+      # - develop # Uncomment if you want to trigger on pushes to develop
+# permissions: # You likely don't need to change these
+#   checks: write
+#   contents: read
+#   pull-requests: write
 jobs:
-  build_and_preview:
-    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+  build_and_deploy: # Changed job name to be more descriptive
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,5 +19,5 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_V_CONNECTION_WEBPAGE }}
           projectId: v-connection-webpage
-          entrypoint: ./ # Or the root of your repository
-          publicDir: .next # Or the correct output directory of your Next.js build
+          entrypoint: ./
+          publicDir: .next # Adjust if your build output is different
