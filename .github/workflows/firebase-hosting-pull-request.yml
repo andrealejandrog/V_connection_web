@@ -2,14 +2,9 @@ name: Deploy to Firebase Hosting on Push
 on:
   push:
     branches:
-      - main # Or your main development branch
-      # - develop # Uncomment if you want to trigger on pushes to develop
-# permissions: # You likely don't need to change these
-#   checks: write
-#   contents: read
-#   pull-requests: write
+      - main # Or your main development branch (e.g., main, master)
 jobs:
-  build_and_deploy: # Changed job name to be more descriptive
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,5 +14,8 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_V_CONNECTION_WEBPAGE }}
           projectId: v-connection-webpage
-          entrypoint: ./
-          publicDir: .next # Adjust if your build output is different
+          entryPoint: ./
+          # publicDir: .next # The action might infer this or use firebase.json
+          # The following lines for preview channels are REMOVED:
+          # expires: 7d
+          # channelId:
