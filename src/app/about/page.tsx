@@ -1,3 +1,4 @@
+// app/about/page.tsx
 'use client';
 
 import React from 'react';
@@ -7,7 +8,39 @@ import SectionTitle from '@/components/SectionTitle';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
 
+// Importa los componentes de react-slick
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 export default function AboutPage() {
+  const showroomImages = [
+    '/images/showroom/show1.jpg', // Asegúrate de que estas rutas existan en /public/images/!
+    '/images/showroom/show2.jpg',
+    '/images/showroom/show3.jpg',
+    '/images/showroom/show4.jpg',
+    '/images/showroom/show5.jpg',
+    '/images/showroom/show6.jpg',
+    '/images/showroom/show7.jpg',
+    '/images/showroom/show8.jpg',
+    '/images/showroom/show9.jpg',
+    '/images/showroom/show10.jpg', // Añadida la imagen original del showroom al carrusel
+  ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+    fade: true,
+    cssEase: "linear",
+  };
+
   return (
     <main className={styles.main}>
       {/* Hero Section */}
@@ -42,7 +75,7 @@ export default function AboutPage() {
         </div>
         <div className={styles.heroImageWrapper}>
           <Image
-            src="/images/showroom-vitrea.jpg"
+            src="/images/about1.jpg"
             alt="Showroom VITREA"
             fill
             className={styles.heroImage}
@@ -53,18 +86,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Sección Quiénes Somos */}
+      {/* Sección Quiénes Somos (Mantenida como estaba originalmente) */}
       <section id="quienes-somos" className={`${styles.section} ${styles.sectionAnimation}`}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
             <SectionTitle level={2} title="¿Quiénes somos?" className={styles.sectionTitle} />
             <Paragraph className={styles.aboutDescription}>
-              Somos <strong>VITREA</strong>, líderes en sistemas de automatización y seguridad en Guatemala. 
-              Desde 2010, hemos estado transformando hogares y negocios con tecnología inteligente 
+              Somos <strong>VITREA</strong>, líderes en sistemas de automatización y seguridad en Guatemala.
+              Desde 2010, hemos estado transformando hogares y negocios con tecnología inteligente
               que combina diseño elegante con funcionalidad avanzada.
             </Paragraph>
             <Paragraph className={styles.aboutDescription}>
-              Nuestro showroom en Zona 10 es un espacio donde puedes experimentar personalmente 
+              Nuestro showroom en Zona 10 es un espacio donde puedes experimentar personalmente
               cómo nuestra tecnología puede mejorar tu calidad de vida.
             </Paragraph>
             <Button
@@ -77,7 +110,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.aboutImage}>
             <Image
-              src="/images/equipo-vitrea.jpg"
+              src="/images/zyro-image.jpg"
               alt="Equipo VITREA"
               fill
               className={styles.aboutImage}
@@ -87,53 +120,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Sección Valores */}
-      <section className={`${styles.partners} ${styles.sectionAnimation}`}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionBadge}>Nuestra esencia</span>
-          <SectionTitle
-            title="Lo que nos define"
-            level={2}
-            className={styles.sectionTitle}
-          />
-        </div>
-        <div className={styles.valuesGrid}>
-          {[
-            { title: 'Innovación', icon: '💡', desc: 'Siempre a la vanguardia tecnológica' },
-            { title: 'Confianza', icon: '🤝', desc: 'Relaciones transparentes y duraderas' },
-            { title: 'Excelencia', icon: '⭐', desc: 'Calidad en cada detalle' },
-            { title: 'Seguridad', icon: '🛡️', desc: 'Protección integral para tu hogar' }
-          ].map((value) => (
-            <div key={value.title} className={styles.valueCard}>
-              <div className={styles.valueIcon}>{value.icon}</div>
-              <h3 className={styles.valueTitle}>{value.title}</h3>
-              <Paragraph>{value.desc}</Paragraph>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Sección Showroom */}
+      {/* NUEVA Sección dedicada EXCLUSIVAMENTE al Showroom con Carrusel */}
       <section className={`${styles.sectionDark} ${styles.sectionAnimation}`}>
         <div className={styles.aboutContent}>
-          <div className={styles.aboutImage}>
-            <Image
-              src="/images/showroom-interior.jpg"
-              alt="Interior del Showroom VITREA"
-              fill
-              className={styles.aboutImage}
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          {/* El Carrusel de Imágenes del Showroom */}
+          <div className={`${styles.aboutImage} ${styles.carouselContainer}`}>
+            <Slider {...settings} className={styles.showroomSlider}>
+              {showroomImages.map((image, index) => (
+                <div key={index} className={styles.slide}>
+                  <div className={styles.slideImageWrapper}>
+                    <Image
+                      src={image}
+                      alt={`Imagen ${index + 1} del Showroom VITREA`}
+                      fill
+                      className={styles.slideImage}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
+          {/* El texto descriptivo del Showroom (en el lado opuesto del carrusel) */}
           <div className={styles.aboutText}>
             <SectionTitle level={2} title="Nuestro Showroom" className={styles.sectionTitle} />
             <Paragraph className={styles.aboutDescription}>
-              Visita nuestro espacio exclusivo en Zona 10 y experimenta personalmente cómo la 
+              Visita nuestro espacio exclusivo en Zona 10 y experimenta personalmente cómo la
               tecnología inteligente puede transformar tu hogar.
             </Paragraph>
             <ul className={styles.featuresList}>
               <li className={styles.featureItem}>
-                <span className={styles.featureIcon}>📍</span> Edificio Torino, Zona 10
+                <span className={styles.featureIcon}>📍</span> Edificio Torino, Zona 10, 19-70, 17 Avenida, Ciudad de Guatemala 01010, Guatemala
               </li>
               <li className={styles.featureItem}>
                 <span className={styles.featureIcon}>🕒</span> Lunes a Viernes: 9:00 - 18:00
@@ -142,13 +159,6 @@ export default function AboutPage() {
                 <span className={styles.featureIcon}>📅</span> Agenda tu visita con anticipación
               </li>
             </ul>
-            <Button
-              href="/agenda-demo"
-              className={styles.secondaryButton}
-              style={{ marginTop: '2rem' }}
-            >
-              Agenda tu visita
-            </Button>
           </div>
         </div>
       </section>

@@ -1,30 +1,17 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 import type { NextConfig } from 'next';
 
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  output: 'export', // Enable static HTML export
-  distDir: 'out',   // Set the output directory for the export
+  output: 'export', // Necesario para Firebase Hosting estático
 
-  // Configuración de paths (alias)
-  baseUrl: ".",
-  paths: {
-    "@/*": ["./src/*"]
-  },
-
-  // Configuración de imágenes
   images: {
-    domains: [
-      'v-connection.local',
-      'v-connection-com-gt-1652853248-complete-2025-05-04.local',
-      'cdn.shopify.com',
-      'i.ytimg.com' // Para videos de YouTube
-    ],
-    // Opcional: configuración de tamaños de imagen
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true, // Necesario porque Firebase Hosting no ejecuta el optimizador de Next.js
   },
 
-  // Otras configuraciones que necesites...
+  // Importante: Usa '/' para que las rutas de los assets sean absolutas desde la raíz del dominio,
+  // lo cual resuelve el error de `next/font` y es compatible con Firebase Hosting.
+  assetPrefix: '/',
 };
 
-module.exports = nextConfig;
+export default nextConfig;

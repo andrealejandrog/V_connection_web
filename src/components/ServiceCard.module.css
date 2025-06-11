@@ -1,37 +1,213 @@
+/* components/ServiceCard.module.css */
+
 .card {
-  border: 1px solid #eee;
-  border-radius: 8px;
+  border: 1px solid #e2e8f0; /* Borde más suave */
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(11, 28, 61, 0.08); /* Sombra con tono azul */
   display: flex;
   flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(11, 28, 61, 0.15);
+  border-color: #C7A246; /* Borde dorado al pasar el mouse */
+}
+
+/* Elemento decorativo dorado en la parte superior */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #C7A246;
+  background: linear-gradient(90deg, #a88a38 0%, #C7A246 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .imageContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* Ajusta la relación de aspecto según tus imágenes */
-  display: flex; /* Habilita Flexbox */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0B1C3D 0%, #142952 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  object-fit: contain;
+  width: 70%;
+  height: 70%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
 }
 
 .title {
-  padding: 1rem;
+  padding: 1.5rem 1rem 0.5rem;
   margin-bottom: 0.5rem;
   text-align: center;
   font-size: 1.5rem;
-  color: #333;
+  color: #0B1C3D; /* Azul oscuro para el título */
+  font-weight: 700;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: #C7A246;
+  opacity: 0.7;
 }
 
 .description {
-  padding: 0 1rem 1rem;
+  padding: 0 1.5rem 1rem;
   text-align: center;
-  color: #666;
-  font-size: 0.9rem;
+  color: #4a5568; /* Texto más suave */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
 }
 
-.card :global(.button) { /* Apply styles to the Button component within the card */
-  margin: 1rem auto;
+.button {
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  display: block;
   width: fit-content;
+  align-self: center;
+  background: linear-gradient(90deg, #a88a38 0%, #C7A246 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(199, 162, 70, 0.2);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(199, 162, 70, 0.3);
+}
+
+/* Variantes de gradiente actualizadas con la paleta */
+.gradient-blue {
+  border: none;
+  background: linear-gradient(145deg, #f8faff, #eef1f7);
+  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.05);
+}
+.gradient-blue .title { color: #0B1C3D; }
+.gradient-blue .description { color: #4a5568; }
+
+.gradient-gold {
+  border: none;
+  background: linear-gradient(145deg, #fefaf0, #faf5e8);
+  box-shadow: 0 8px 20px rgba(199, 162, 70, 0.05);
+}
+.gradient-gold .title { color: #0B1C3D; }
+.gradient-gold .description { color: #4a5568; }
+.gradient-gold .title::after {
+  background: #0B1C3D;
+  opacity: 0.5;
+}
+
+.gradient-dark {
+  border: none;
+  background: linear-gradient(145deg, #0d203f, #0B1C3D);
+  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.1);
+}
+.gradient-dark .title { 
+  color: #ffffff; 
+  font-weight: 600;
+}
+.gradient-dark .title::after {
+  background: #C7A246;
+  opacity: 1;
+}
+.gradient-dark .description { 
+  color: #cbd5e0; 
+}
+.gradient-dark .button {
+  background: linear-gradient(90deg, #C7A246 0%, #d8c17a 100%);
+}
+
+/* --- Responsive Adjustments for ServiceCard --- */
+@media (max-width: 1024px) {
+  .imageContainer {
+    height: 150px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .description {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding-bottom: 0.5rem;
+  }
+  .imageContainer {
+    height: 120px;
+  }
+  .title {
+    font-size: 1.2rem;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .description {
+    font-size: 0.85rem;
+    padding: 0 1rem 0.8rem;
+    -webkit-line-clamp: 6;
+  }
+  .button {
+    margin-bottom: 1rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    height: 100px;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 7;
+  }
+  .button {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.85rem;
+  }
 }

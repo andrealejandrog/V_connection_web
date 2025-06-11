@@ -1,0 +1,42 @@
+[debug] [2025-06-11T02:46:54.677Z] ----------------------------------------------------------------------
+[debug] [2025-06-11T02:46:54.681Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\andre\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-06-11T02:46:54.681Z] CLI Version:   13.31.2
+[debug] [2025-06-11T02:46:54.681Z] Platform:      win32
+[debug] [2025-06-11T02:46:54.682Z] Node Version:  v22.7.0
+[debug] [2025-06-11T02:46:54.682Z] Time:          Tue Jun 10 2025 20:46:54 GMT-0600 (hora estándar central)
+[debug] [2025-06-11T02:46:54.682Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-11T02:46:54.687Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-06-11T02:46:55.003Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-11T02:46:55.003Z] > authorizing via signed-in user (andrealejandrog@gmail.com)
+[debug] [2025-06-11T02:46:55.003Z] [iam] checking project v-connection-webpage for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-11T02:46:55.004Z] Checked if tokens are valid: false, expires at: 1749497583430
+[debug] [2025-06-11T02:46:55.004Z] Checked if tokens are valid: false, expires at: 1749497583430
+[debug] [2025-06-11T02:46:55.005Z] > refreshing access token with scopes: []
+[debug] [2025-06-11T02:46:55.006Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-11T02:46:55.006Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-11T02:46:55.211Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-06-11T02:46:55.211Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-06-11T02:46:55.222Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-11T02:46:55.223Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-11T02:46:55.232Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/v-connection-webpage:testIamPermissions [none]
+[debug] [2025-06-11T02:46:55.232Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/v-connection-webpage:testIamPermissions x-goog-quota-user=projects/v-connection-webpage
+[debug] [2025-06-11T02:46:55.232Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/v-connection-webpage:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-11T02:46:55.679Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/v-connection-webpage:testIamPermissions 200
+[debug] [2025-06-11T02:46:55.680Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/v-connection-webpage:testIamPermissions {}
+[debug] [2025-06-11T02:46:55.680Z] [iam] error while checking permissions, command may fail: Authorization failed. This account is missing the following required permissions on project v-connection-webpage:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-06-11T02:46:55.681Z] Checked if tokens are valid: true, expires at: 1749613614223
+[debug] [2025-06-11T02:46:55.681Z] Checked if tokens are valid: true, expires at: 1749613614223
+[debug] [2025-06-11T02:46:55.681Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/v-connection-webpage [none]
+[debug] [2025-06-11T02:46:56.001Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/v-connection-webpage 403
+[debug] [2025-06-11T02:46:56.001Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/v-connection-webpage {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-06-11T02:46:56.002Z] Request to https://firebase.googleapis.com/v1beta1/projects/v-connection-webpage had HTTP Error: 403, The caller does not have permission
+[debug] [2025-06-11T02:46:56.137Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/v-connection-webpage had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\andre\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\andre\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project v-connection-webpage. Please make sure the project exists and your account has permission to access it.

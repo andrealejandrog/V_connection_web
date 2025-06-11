@@ -1,7 +1,9 @@
+/* Paleta de colores del cliente */
+
 .main {
   font-family: 'Inter', sans-serif;
   color: #0f172a;
-  background: #ffffff;
+  background: var(--white);
   overflow-x: hidden;
 }
 
@@ -34,7 +36,7 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 4rem 6rem;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #142952 100%);
   position: relative;
 }
 
@@ -54,12 +56,12 @@
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
-  color: #ffffff;
+  color: var(--white);
   margin-bottom: 2rem;
 }
 
 .titleGradient {
-  background: linear-gradient(90deg, #818cf8 0%, #c4b5fd 100%);
+  background: linear-gradient(90deg, var(--gold) 0%, var(--light-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -76,7 +78,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: #818cf8;
+  background: var(--gold);
   border-radius: 2px;
 }
 
@@ -94,8 +96,8 @@
 }
 
 .ctaButton {
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background: linear-gradient(90deg, var(--dark-gold) 0%, var(--gold) 100%);
+  color: var(--white);
   padding: 1rem 2rem;
   border-radius: 50px;
   display: inline-flex;
@@ -108,7 +110,7 @@
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 20px rgba(199, 162, 70, 0.3);
 }
 
 .buttonArrow {
@@ -122,15 +124,15 @@
 
 .secondaryButton {
   background: transparent;
-  color: #818cf8;
-  border: 2px solid #818cf8;
+  color: var(--gold);
+  border: 2px solid var(--gold);
   padding: 1rem 2rem;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
 
 .secondaryButton:hover {
-  background: rgba(129, 140, 248, 0.1);
+  background: rgba(199, 162, 70, 0.1);
 }
 
 .heroImageWrapper {
@@ -157,7 +159,7 @@
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, rgba(15, 23, 42, 0.6) 0%, transparent 100%);
+  background: linear-gradient(45deg, rgba(11, 28, 61, 0.6) 0%, transparent 100%);
 }
 
 /* Servicios Section */
@@ -173,8 +175,8 @@
 
 .sectionBadge {
   display: inline-block;
-  background: #e0e7ff;
-  color: #6366f1;
+  background: rgba(199, 162, 70, 0.15);
+  color: var(--gold);
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
@@ -184,7 +186,7 @@
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--dark-blue);
   margin-bottom: 1rem;
 }
 
@@ -199,7 +201,7 @@
 /* About Section */
 .about {
   padding: 8rem 6rem;
-  background: #ffffff;
+  background: var(--white);
 }
 
 .aboutContent {
@@ -238,6 +240,7 @@
 
 .featureIcon {
   font-size: 1.5rem;
+  color: var(--gold);
 }
 
 .aboutImage {
@@ -245,126 +248,88 @@
   height: 500px;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(11, 28, 61, 0.1);
 }
 
-/* Partners Section */
+/* --- Partners Section --- */
 .partners {
-  padding: 6rem 6rem;
+  padding: 6rem 20px;
   background: #f8fafc;
+  text-align: center;
 }
 
+.partners .sectionHeader {
+  margin-bottom: 50px;
+}
+
+.partners .sectionBadge {
+  background: rgba(199, 162, 70, 0.15);
+  color: var(--gold);
+}
+
+.partners .sectionTitle {
+  color: var(--dark-blue);
+}
+
+/* Contenedor del mosaico de logos */
 .partnersGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px 0;
 }
 
-.partnerLogo {
+/* Contenedor de cada logo */
+.partnerLogoContainer {
   position: relative;
-  height: 80px;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.partnerLogo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* ------------------------- */
-/* Menú Hamburguesa */
-/* ------------------------- */
-
-.hamburger-menu {
-  display: none;
-  background: #6366f1;
-  border: none;
-  padding: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 1000;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
-
-.hamburger-menu .line {
-  width: 25px;
-  height: 3px;
-  background: white;
-  margin: 5px 0;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 80%;
-  max-width: 300px;
-  height: 100vh;
-  background: #0f172a;
-  padding: 5rem 2rem;
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.mobile-menu.active {
-  right: 0;
-}
-
-.mobile-menu a {
-  display: block;
-  color: white;
-  padding: 1rem 0;
-  border-bottom: 1px solid #1e293b;
-  text-decoration: none;
-}
-
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white);
 }
 
-.menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
+.partnerLogoContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.15);
 }
 
-/* ------------------------- */
-/* Responsive Design */
-/* ------------------------- */
+.partnerLogoContainer > img {
+  filter: grayscale(100%) brightness(150%);
+  transition: filter 0.3s ease;
+}
 
+.partnerLogoContainer:hover > img {
+  filter: grayscale(0%) brightness(100%);
+}
+
+/* --- RESPONSIVIDAD --- */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
     padding: 3rem 2rem;
     min-height: auto;
   }
-  
+
   .heroContent {
     padding: 2rem;
     text-align: center;
   }
-  
+
   .heroText {
     max-width: 100%;
     margin: 0 auto;
   }
-  
+
   .heroImageContainer {
     height: 350px;
     margin-top: 2rem;
@@ -372,15 +337,23 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .buttonGroup {
     justify-content: center;
   }
-  
+
   .services,
   .about,
   .partners {
     padding: 4rem 2rem;
+  }
+
+  .partnersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+  }
+  .partnerLogoContainer {
+    height: 80px;
   }
 }
 
@@ -388,50 +361,56 @@
   .hamburger-menu {
     display: block;
   }
-  
+
   .heroTitle {
     font-size: 2.2rem;
   }
-  
+
   .heroSubtitle {
     font-size: 1rem;
   }
-  
+
   .ctaButton,
   .secondaryButton {
     padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
   }
-  
+
   .sectionTitle {
     font-size: 1.8rem;
   }
-  
+
   .aboutContent {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .aboutText {
     padding-right: 0;
   }
-  
+
   .aboutImage {
     height: 350px;
   }
-  
+
   .servicesGrid {
     grid-template-columns: 1fr;
   }
-  
-  /* Ocultar menú desktop en móviles */
+
   .desktop-menu {
     display: none;
   }
-  
-  /* Asegurar que el contenido no quede detrás del menú */
+
   .main-content {
     padding-top: 70px;
+  }
+
+  .partnersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 15px;
+  }
+  .partnerLogoContainer {
+    height: 60px;
   }
 }
 
@@ -439,46 +418,55 @@
   .hero {
     padding: 2rem 1rem;
   }
-  
+
   .heroTitle {
     font-size: 1.8rem;
   }
-  
+
   .buttonGroup {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .ctaButton,
   .secondaryButton {
     width: 100%;
     text-align: center;
     justify-content: center;
   }
-  
+
   .heroImageContainer {
     height: 250px;
   }
-  
+
   .mobile-menu {
     width: 85%;
   }
+
+  .partnersGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .partnerLogoContainer {
+    height: 50px;
+  }
 }
 
-/* ------------------------- */
 /* Optimización para motion */
-/* ------------------------- */
-
 @media (prefers-reduced-motion: reduce) {
   .sectionAnimation {
     transition: none;
     animation: none;
     opacity: 1;
   }
-  
+
   .heroImage:hover,
-  .partnerLogo:hover,
+  .partnerLogoContainer:hover,
   .ctaButton:hover {
     transform: none;
+  }
+
+  .partnerLogoContainer > img {
+    transition: none;
   }
 }

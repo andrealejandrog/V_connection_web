@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Arial', sans-serif;
-  color: #333;
+  color: #0B1C3D; /* Azul oscuro para texto principal */
 }
 
 /* Hero Section */
@@ -12,15 +12,16 @@
   text-align: center;
   padding: 4rem 2rem;
   margin-bottom: 3rem;
-  background-color: #f8f9fa;
+  background-color: #F8F9FA; /* Un blanco muy sutil para el fondo de la sección hero */
   border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(11, 28, 61, 0.08); /* Sombra suave con el azul oscuro */
 }
 
 .heroTitle {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
+  color: #0B1C3D; /* Azul oscuro para el título principal */
 }
 
 .heroText {
@@ -28,22 +29,28 @@
   max-width: 800px;
   margin: 0 auto 2rem;
   line-height: 1.6;
-  color: #555;
+  color: rgba(11, 28, 61, 0.9); /* Azul oscuro con ligera transparencia para el texto */
 }
 
 .ctaButton {
   display: inline-block;
   padding: 0.8rem 2rem;
-  background-color: #3498db;
-  color: white;
+  background: linear-gradient(90deg, #C7A246, #d8b863); /* Degradado dorado */
+  color: #0B1C3D; /* Azul oscuro para el texto del botón */
   text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  border-radius: 50px; /* Bordes más redondeados para el botón */
+  font-weight: 700; /* Más énfasis en el texto del botón */
+  transition: all 0.3s ease; /* Transición más completa */
+  box-shadow: 0 4px 15px rgba(199, 162, 70, 0.4); /* Sombra dorada */
+  border: none; /* Eliminar borde por defecto */
+  cursor: pointer;
 }
 
 .ctaButton:hover {
-  background-color: #2980b9;
+  transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
+  box-shadow: 0 6px 20px rgba(199, 162, 70, 0.5); /* Sombra más pronunciada */
+  background: linear-gradient(90deg, #d8b863, #C7A246); /* Invertir degradado al pasar el mouse */
+  color: #0B1C3D; /* Asegurar que el color del texto se mantenga */
 }
 
 /* Content Section */
@@ -59,7 +66,7 @@
 .featureIcon svg {
   width: 60px;
   height: 60px;
-  fill: #3498db;
+  fill: #C7A246; /* Dorado para los iconos */
   margin-bottom: 1.5rem;
 }
 
@@ -67,13 +74,13 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: #0B1C3D; /* Azul oscuro para los títulos de característica */
 }
 
 .featureSubtitle {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #3498db;
+  color: #C7A246; /* Dorado para los subtítulos de característica */
   margin-bottom: 1.5rem;
 }
 
@@ -82,7 +89,7 @@
   line-height: 1.7;
   max-width: 800px;
   margin: 0 auto 1rem;
-  color: #555;
+  color: rgba(11, 28, 61, 0.9); /* Azul oscuro con ligera transparencia para el texto de característica */
 }
 
 /* Features Grid */
@@ -94,16 +101,17 @@
 }
 
 .featureCard {
-  background: white;
+  background: #FFFFFF; /* Blanco para el fondo de las tarjetas de característica */
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(11, 28, 61, 0.05); /* Sombra sutil con el azul oscuro */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(11, 28, 61, 0.05); /* Borde muy sutil */
 }
 
 .featureCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.1); /* Sombra más pronunciada al pasar el mouse */
 }
 
 .cardImage {
@@ -127,13 +135,13 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: #0B1C3D; /* Azul oscuro para los títulos de las tarjetas */
 }
 
 .cardText {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: rgba(11, 28, 61, 0.85); /* Azul oscuro con transparencia para el texto de las tarjetas */
   margin-bottom: 1.5rem;
 }
 
@@ -144,6 +152,8 @@
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
+  border-radius: 6px; /* Para que el video también tenga los bordes redondeados */
+  box-shadow: 0 5px 20px rgba(11, 28, 61, 0.15); /* Sombra para el video */
 }
 
 .video {

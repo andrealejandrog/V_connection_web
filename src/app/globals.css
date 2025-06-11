@@ -1,14 +1,31 @@
-/* app/globals.css */
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Copia estilos base (personaliza según tu sitio) */
+/* Custom base styles that override/extend Tailwind's preflight */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  /* Set your global font, text color, and background color here */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Added sans-serif fallback */
   color: #333333;
   background-color: #fff;
+  /* Ensure no accidental margins/padding are introduced */
+  margin: 0; /* Redundant with Tailwind base, but harmless to explicitly state */
+  padding: 0; /* Redundant with Tailwind base, but harmless to explicitly state */
+  overflow-x: hidden; /* Keep this to prevent horizontal scrollbars */
 }
+
+/* Optional: Styles to hide scrollbars, if not handled by Tailwind or your needs */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+html {
+  scrollbar-color: transparent transparent; /* For Firefox */
+}
+
 
 a {
   color: #CC3366;
@@ -19,4 +36,20 @@ a:hover {
   color: #333366;
 }
 
-/* ... (agrega otros estilos clave) */
+/* Any other GLOBAL styles for raw HTML elements (e.g., h1, p, ul) that you want to set outside of Tailwind utility classes.
+   For example:
+   h1 {
+     font-size: 2.5rem;
+     font-weight: bold;
+     margin-bottom: 1rem;
+   }
+*/
+
+
+:root {
+  --dark-blue: #0B1C3D;     /* Azul oscuro (fondo) */
+  --gold: #C7A246;          /* Dorado (símbolo) */
+  --white: #FFFFFF;         /* Blanco (texto) */
+  --light-gold: #d8c17a;    /* Dorado claro para hover */
+  --dark-gold: #a88a38;     /* Dorado oscuro para gradientes */
+}

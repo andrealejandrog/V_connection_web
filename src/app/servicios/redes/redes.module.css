@@ -1,0 +1,219 @@
+/* Base Styles */
+.redesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #0B1C3D; /* Dark blue for primary text */
+}
+
+/* Hero Section */
+.heroSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #0B1C3D 0%, #0d2a5c 100%); /* Dark blue gradient */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(11, 28, 61, 0.2); /* Shadow with dark blue */
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF; /* White for hero title */
+  /* Removed -webkit-background-clip, background-clip, and transparent color */
+}
+
+.heroText {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(90deg, #C7A246, #d8b863); /* Gold gradient */
+  color: #0B1C3D; /* Dark blue for button text */
+  text-decoration: none;
+  border-radius: 50px; /* More rounded borders for consistency */
+  font-weight: 700; /* Bolder text for emphasis */
+  transition: all 0.3s ease; /* More comprehensive transition */
+  box-shadow: 0 4px 15px rgba(199, 162, 70, 0.4); /* Gold shadow */
+  border: none; /* Remove default border */
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(199, 162, 70, 0.5);
+  background: linear-gradient(90deg, #d8b863, #C7A246); /* Reverse gradient on hover */
+  color: #0B1C3D; /* Ensure text color remains dark blue */
+}
+
+/* Content Section */
+.contentSection {
+  padding: 2rem 0;
+}
+
+.feature {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.featureTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0B1C3D; /* Dark blue for feature titles */
+  position: relative;
+  display: inline-block;
+}
+
+.featureTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #C7A246; /* Gold for decorative line */
+  border-radius: 2px;
+}
+
+.featureSubtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #C7A246; /* Gold for feature subtitles */
+  margin-bottom: 1.5rem;
+  display: inline-block; /* For proper background application */
+  background: rgba(199, 162, 70, 0.1); /* Subtle gold background */
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(199, 162, 70, 0.3); /* Subtle gold border */
+}
+
+.featureText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  color: #0B1C3D; /* Dark blue for feature text */
+}
+
+/* Features Grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.featureCard {
+  background: white; /* White for card background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.08); /* Shadow with dark blue */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(11, 28, 61, 0.05); /* Very subtle border */
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(11, 28, 61, 0.12); /* More pronounced shadow on hover */
+}
+
+.cardImage {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(11, 28, 61, 0.1); /* Shadow with dark blue */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+
+.featureCard:hover .image {
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0B1C3D; /* Dark blue for card titles */
+}
+
+.cardText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #0B1C3D; /* Dark blue for card text */
+  margin-bottom: 1rem;
+}
+
+/* Demo Section */
+.demoSection {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.demoTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0B1C3D; /* Dark blue for demo section title */
+}
+
+.demoSubtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #C7A246; /* Gold for demo section subtitle */
+  margin-bottom: 2rem;
+}
+
+.videoContainer {
+  margin-top: 1.5rem;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(11, 28, 61, 0.15); /* Shadow with dark blue */
+  border: 1px solid rgba(11, 28, 61, 0.1); /* Subtle border */
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 1rem;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.5rem;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+}

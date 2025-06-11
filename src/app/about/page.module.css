@@ -276,3 +276,73 @@
     font-size: 2rem;
   }
 }
+
+
+.carouselContainer {
+  /* Asegura que el contenedor del carrusel tenga una altura definida
+     y maneje correctamente el overflow de los slides. */
+  height: 500px; /* O el alto que desees para tu carrusel */
+  width: 100%;
+  position: relative; /* Importante para que Image fill funcione */
+  overflow: hidden; /* Asegura que las imágenes no se salgan del contenedor */
+  border-radius: 16px; /* Mantiene el estilo de la imagen */
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1); /* Mantiene la sombra */
+}
+
+/* Estilos para el componente Slider de react-slick */
+.showroomSlider {
+  height: 100%;
+  width: 100%;
+}
+
+/* Estilos para los slides individuales */
+.slide {
+  height: 100%; /* El slide debe ocupar el 100% de la altura de su contenedor */
+  position: relative; /* Importante para que el wrapper de la imagen funcione */
+}
+
+/* Wrapper para la imagen de Next.js dentro del slide */
+.slideImageWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative; /* Necesario para que Image fill funcione correctamente */
+}
+
+/* Estilos para la imagen de Next.js dentro del slide */
+.slideImage {
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  width: 100% !important; /* Forzar el ancho al 100% */
+  height: 100% !important; /* Forzar la altura al 100% */
+  position: relative !important; /* Sobrescribir posible position:absolute del fill */
+}
+
+/* Ajustes para las flechas de navegación de Slick */
+/* Puedes personalizar su posición y estilo si lo necesitas */
+.slick-prev:before,
+.slick-next:before {
+  color: #6366f1; /* Color de las flechas */
+  font-size: 30px; /* Tamaño de las flechas */
+}
+
+/* Ajustes para los puntos de navegación (dots) de Slick */
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #6366f1; /* Color de los puntos inactivos */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #8b5cf6; /* Color de los puntos activos */
+}
+
+/* Media Queries para responsividad del carrusel */
+@media (max-width: 1024px) {
+  .carouselContainer {
+    height: 400px; /* Ajusta la altura del carrusel para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    height: 300px; /* Altura para móviles */
+  }
+}

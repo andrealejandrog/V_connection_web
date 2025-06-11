@@ -1,7 +1,9 @@
-"use client";
+// components/Footer.tsx
+'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from 'next/link'; // <--- ¡Importa Link de Next.js!
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -15,29 +17,33 @@ const Footer = () => {
             Especialistas en automatización residencial e integración tecnológica
           </p>
           <div className={styles.certification}>
-            <span>Certificado por </span>
-            <a 
-              href="https://www.vitrea-sh.com" 
-              target="_blank" 
+            <span>Certified by </span>
+            {/* El texto "Vitrea Smart Home" sigue siendo un enlace */}
+            <a
+              href="https://www.vitrea-sh.com"
+              target="_blank"
               rel="noopener noreferrer"
               className={styles.certificationLink}
             >
-              Vitrea Smart Home
             </a>
+            {/* Aquí es donde envolvemos el logo de Vitrea con Link */}
+            <Link
+              href="https://www.vitrea-sh.com" // <--- La URL a la que quieres que dirija el logo
+              target="_blank" // <--- Abre en una nueva pestaña (opcional)
+              rel="noopener noreferrer" // <--- Buena práctica para target="_blank"
+            >
+              <Image
+                src="/images/Vitrea-logo-blanco-02.png" // <--- Tu ruta de imagen
+                alt="Vitrea Smart Home Logo"
+                width={24}
+                height={24}
+                className={styles.vitreaLogo}
+              />
+            </Link>
           </div>
         </div>
-
-        {/* Enlaces rápidos */}
-        <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>Enlaces rápidos</h4>
-          <ul className={styles.linkList}>
-            <li><Link href="/servicios" className={styles.footerLink}>Servicios</Link></li>
-            <li><Link href="/proyectos" className={styles.footerLink}>Proyectos</Link></li>
-            <li><Link href="/contacto" className={styles.footerLink}>Contacto</Link></li>
-          </ul>
-        </div>
-
-        {/* Legal */}
+{/*
+        Legal
         <div className={styles.footerSection}>
           <h4 className={styles.sectionTitle}>Legal</h4>
           <ul className={styles.linkList}>
@@ -45,7 +51,7 @@ const Footer = () => {
             <li><Link href="/legal/privacidad" className={styles.footerLink}>Política de Privacidad</Link></li>
             <li><Link href="/legal/cookies" className={styles.footerLink}>Política de Cookies</Link></li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contacto */}
         <div className={styles.footerSection}>
@@ -53,7 +59,7 @@ const Footer = () => {
           <ul className={styles.contactInfo}>
             <li>✉️ <a href="mailto:info@v-connection.com.gt" className={styles.footerLink}>info@v-connection.com.gt</a></li>
             <li>📞 <a href="tel:+50222987512" className={styles.footerLink}>(502) 2298-7512</a></li>
-            <li>📍 Edificio Torino, Zona 10</li>
+            <li>📍 Edificio Torino, Zona 10, 19-70, 17 Avenida, Ciudad de Guatemala 01010, Guatemala</li>
           </ul>
         </div>
       </div>
