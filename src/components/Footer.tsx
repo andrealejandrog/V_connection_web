@@ -12,7 +12,7 @@ const Footer = () => {
       <div className={styles.footerContent}>
         {/* Sección de información */}
         <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>V-Connection</h4>
+          <h4 className={styles.sectionTitle}>V-Connection S.A.</h4>
           <p className={styles.companyInfo}>
             Especialistas en automatización residencial e integración tecnológica
           </p>
@@ -59,14 +59,14 @@ const Footer = () => {
           <ul className={styles.contactInfo}>
             <li>✉️ <a href="mailto:info@v-connection.com.gt" className={styles.footerLink}>info@v-connection.com.gt</a></li>
             <li>📞 <a href="tel:+50222987512" className={styles.footerLink}>(502) 2298-7512</a></li>
-            <li>📍 Edificio Torino, Zona 10, 19-70, 17 Avenida, Ciudad de Guatemala 01010, Guatemala</li>
+            <li>📍 Edificio Torino I , Zona 10, 19-70, 17 Avenida, Ciudad de Guatemala 01010, Guatemala</li>
           </ul>
         </div>
       </div>
 
       {/* Derechos de autor */}
       <div className={styles.copyRight}>
-        <p>© {new Date().getFullYear()} V-Connection. Todos los derechos reservados.</p>
+        <p>© {new Date().getFullYear()} V-Connection S.A. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

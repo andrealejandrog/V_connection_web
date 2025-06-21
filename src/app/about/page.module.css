@@ -2,8 +2,8 @@
 
 .main {
   font-family: 'Inter', sans-serif;
-  color: #0f172a;
-  background: #ffffff;
+  color: #0B1C3D; /* Dark text for main content on white background - CAMBIO */
+  background: #ffffff; /* Main white background - CAMBIO */
   overflow-x: hidden;
 }
 
@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0B1C3D 0%, #1a2b4b 100%); /* Nuevo degradado de azul oscuro - CAMBIO */
   position: relative;
 }
 
@@ -30,19 +30,19 @@
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #ffffff;
+  color: #ffffff; /* Título blanco para el hero - CAMBIO */
   margin-bottom: 1.5rem;
 }
 
 .titleGradient {
-  background: linear-gradient(90deg, #818cf8 0%, #c4b5fd 100%);
+  background: linear-gradient(90deg, #C7A246 0%, #f0d69b 100%); /* Degradado dorado - CAMBIO */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .heroSubtitle {
   font-size: 1.25rem;
-  color: #94a3b8;
+  color: #e0e6f0; /* Subtítulo más claro, casi blanco, sobre fondo oscuro - CAMBIO */
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -59,7 +59,7 @@
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, rgba(15, 23, 42, 0.7) 0%, transparent 100%);
+  background: linear-gradient(45deg, rgba(11, 28, 61, 0.7) 0%, transparent 100%); /* Superposición de imagen con nuevo azul - CAMBIO */
 }
 
 /* About Section */
@@ -68,7 +68,7 @@
 }
 
 .sectionDark {
-  background: #f8fafc;
+  background: #f8fafc; /* Color de fondo claro para secciones - se mantiene si es blanco */
   padding: 8rem 4rem;
 }
 
@@ -88,12 +88,12 @@
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #0B1C3D; /* Título de sección oscuro - CAMBIO */
   margin-bottom: 1.5rem;
 }
 
 .aboutDescription {
-  color: #64748b;
+  color: #4a5a6b; /* Un gris oscuro legible sobre blanco - CAMBIO */
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
@@ -103,13 +103,13 @@
   height: 500px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(11, 28, 61, 0.15); /* Sombra con nuevo azul - CAMBIO */
 }
 
 /* Values Section */
 .partners {
   padding: 6rem 4rem;
-  background: #ffffff;
+  background: #ffffff; /* Fondo blanco - CAMBIO */
 }
 
 .sectionHeader {
@@ -119,8 +119,8 @@
 
 .sectionBadge {
   display: inline-block;
-  background: #e0e7ff;
-  color: #6366f1;
+  background: #f0d69b; /* Color de fondo del badge, un dorado más claro - CAMBIO */
+  color: #0B1C3D; /* Texto oscuro para el badge - CAMBIO */
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
@@ -136,7 +136,7 @@
 }
 
 .valueCard {
-  background: #f8fafc;
+  background: #f8fafc; /* Fondo claro para las tarjetas de valores - se mantiene */
   padding: 2rem;
   border-radius: 16px;
   text-align: center;
@@ -150,12 +150,13 @@
 .valueIcon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #C7A246; /* Icono dorado - CAMBIO */
 }
 
 .valueTitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #0f172a;
+  color: #0B1C3D; /* Título de valor oscuro - CAMBIO */
 }
 
 /* Features List */
@@ -168,12 +169,12 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0; /* Borde sutil, se mantiene */
 }
 
 .featureIcon {
   font-size: 1.5rem;
-  color: #6366f1;
+  color: #C7A246; /* Icono de característica dorado - CAMBIO */
 }
 
 /* Buttons */
@@ -184,7 +185,7 @@
 }
 
 .ctaButton {
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  background: linear-gradient(90deg, #C7A246 0%, #b38e3e 100%); /* Degradado dorado para CTA - CAMBIO */
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -199,7 +200,7 @@
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 10px 20px rgba(199, 162, 70, 0.3); /* Sombra con dorado - CAMBIO */
 }
 
 .buttonArrow {
@@ -213,8 +214,8 @@
 
 .secondaryButton {
   background: transparent;
-  color: #818cf8;
-  border: 2px solid #818cf8;
+  color: #C7A246; /* Borde dorado para el botón secundario - CAMBIO */
+  border: 2px solid #C7A246; /* Borde dorado para el botón secundario - CAMBIO */
   padding: 1rem 2rem;
   border-radius: 50px;
   transition: all 0.3s ease;
@@ -222,7 +223,7 @@
 }
 
 .secondaryButton:hover {
-  background: rgba(129, 140, 248, 0.1);
+  background: rgba(199, 162, 70, 0.1); /* Fondo sutil con dorado en hover - CAMBIO */
 }
 
 /* Responsive Design */
@@ -231,21 +232,21 @@
     grid-template-columns: 1fr;
     min-height: auto;
   }
-  
+
   .heroContent {
     padding: 2rem;
     order: 2;
   }
-  
+
   .heroImageWrapper {
     height: 50vh;
     order: 1;
   }
-  
+
   .aboutContent {
     grid-template-columns: 1fr;
   }
-  
+
   .aboutImage {
     height: 400px;
   }
@@ -255,13 +256,13 @@
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .section,
   .sectionDark,
   .partners {
     padding: 4rem 2rem;
   }
-  
+
   .buttonGroup {
     flex-direction: column;
   }
@@ -271,12 +272,11 @@
   .heroTitle {
     font-size: 2rem;
   }
-  
+
   .sectionTitle {
     font-size: 2rem;
   }
 }
-
 
 .carouselContainer {
   /* Asegura que el contenedor del carrusel tenga una altura definida
@@ -286,7 +286,7 @@
   position: relative; /* Importante para que Image fill funcione */
   overflow: hidden; /* Asegura que las imágenes no se salgan del contenedor */
   border-radius: 16px; /* Mantiene el estilo de la imagen */
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1); /* Mantiene la sombra */
+  box-shadow: 0 25px 50px -12px rgba(11, 28, 61, 0.15); /* Sombra con nuevo azul - CAMBIO */
 }
 
 /* Estilos para el componente Slider de react-slick */
@@ -320,18 +320,18 @@
 /* Puedes personalizar su posición y estilo si lo necesitas */
 .slick-prev:before,
 .slick-next:before {
-  color: #6366f1; /* Color de las flechas */
+  color: #C7A246; /* Color de las flechas dorado - CAMBIO */
   font-size: 30px; /* Tamaño de las flechas */
 }
 
 /* Ajustes para los puntos de navegación (dots) de Slick */
 .slick-dots li button:before {
   font-size: 10px;
-  color: #6366f1; /* Color de los puntos inactivos */
+  color: #C7A246; /* Color de los puntos inactivos dorado - CAMBIO */
 }
 
 .slick-dots li.slick-active button:before {
-  color: #8b5cf6; /* Color de los puntos activos */
+  color: #b38e3e; /* Color de los puntos activos, un dorado más oscuro - CAMBIO */
 }
 
 /* Media Queries para responsividad del carrusel */

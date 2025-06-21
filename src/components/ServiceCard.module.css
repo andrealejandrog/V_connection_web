@@ -82,18 +82,17 @@
 }
 
 .description {
-  padding: 0 1.5rem 1rem;
+  padding: 0  1rem;
   text-align: center;
   color: #4a5568; /* Texto más suave */
   font-size: 0.95rem;
   line-height: 1.6;
   flex-grow: 1;
-  display: -webkit-box;
+  display: flex;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: visible;
   text-overflow: ellipsis;
-  margin-bottom: 1rem;
 }
 
 .button {

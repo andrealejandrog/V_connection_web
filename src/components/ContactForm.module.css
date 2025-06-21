@@ -1,0 +1,356 @@
+/* components/ContactForm/ContactForm.module.css */
+
+.formContainer {
+  background-color: #1a2b4b; /* Similar to your info card background */
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(199, 162, 70, 0.3); /* Gold border */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between form title/subtitle and fields */
+  position: relative; /* Importante para que el popup se posicione correctamente */
+  z-index: 1; /* Asegura que el contenido del formulario esté por debajo del popup si no se mueve el popup a un portal */
+}
+
+.formTitle {
+  color: #C7A246; /* Gold for the form title */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.formSubtitle {
+  color: #e0e6f0; /* Light text for subtitle */
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem; /* Space before the form starts */
+  text-align: left;
+  line-height: 1.6;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between form groups */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #ffffff; /* White label text */
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.textarea {
+  background-color: #0B1C3D; /* Dark blue input background */
+  border: 1px solid rgba(199, 162, 70, 0.5); /* Gold border for inputs */
+  color: #ffffff; /* White text in inputs */
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem; /* Slightly rounded corners */
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #C7A246; /* Gold border on focus */
+  box-shadow: 0 0 0 3px rgba(199, 162, 70, 0.3); /* Subtle gold glow on focus */
+}
+
+.textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 120px;
+}
+
+.submitButton {
+  background: linear-gradient(90deg, #C7A246 0%, #b38e3e 100%); /* Gold gradient button */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem; /* Space above the button */
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(199, 162, 70, 0.3);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitMessage {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #C7A246; /* Gold for success/error messages */
+}
+
+/* --- ESTILOS PARA EL BOTÓN "Solicitar código de distribuidor" --- */
+.distributorButton {
+  font-size: 1.05rem; /* Tamaño de fuente para encajar bien en el formulario */
+  padding: 0.8rem 1.8rem; /* Padding ajustado */
+  border-radius: 50px;
+  background-color: #C7A246; /* Tu color dorado */
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(199, 162, 70, 0.2); /* Sombra sutil */
+  display: inline-flex; /* Para alinear icono y texto */
+  align-items: center;
+  justify-content: center; /* Centrar contenido horizontalmente */
+  gap: 0.6rem; /* Espacio entre el icono y el texto */
+  text-decoration: none; /* Asegura que no tenga subrayado */
+  border: none;
+  cursor: pointer;
+  width: fit-content; /* Se ajusta al contenido */
+  margin-top: 1.5rem; /* Espacio superior para separarlo del botón de enviar */
+  align-self: center; /* Centra el botón en el formulario flex-column */
+}
+
+.distributorButton:hover {
+  background-color: #b38e3e; /* Dorado ligeramente más oscuro al pasar el ratón */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(199, 162, 70, 0.3);
+}
+
+.distributorIcon {
+    font-size: 1.3rem; /* Tamaño del icono */
+    line-height: 1; /* Asegura que el icono esté bien alineado */
+}
+
+/* --- ESTILOS PARA EL POPUP DE LLAMADA --- */
+.callPopupOverlay {
+  position: fixed; /* Ocupa toda la ventana de visualización */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de todo lo demás */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
+}
+
+.callPopup {
+  background-color: #1a2b4b; /* Color de fondo del popup */
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7); /* Sombra más fuerte para el popup */
+  border: 1px solid rgba(199, 162, 70, 0.5); /* Borde dorado */
+  text-align: center;
+  max-width: 450px; /* Ancho máximo del popup */
+  width: 90%; /* Ancho responsivo */
+  position: relative;
+  animation: fadeInScale 0.3s ease-out forwards; /* Animación de entrada */
+}
+
+.closePopupButton {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #e0e6f0; /* Color claro para la 'x' */
+  cursor: pointer;
+  line-height: 1; /* Asegura que la 'x' esté bien alineada */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.closePopupButton:hover {
+  color: #C7A246; /* Dorado al pasar el ratón */
+  transform: rotate(90deg); /* Pequeña rotación al pasar el ratón */
+}
+
+.popupTitle {
+  color: #C7A246; /* Título del popup en dorado */
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.popupText {
+  color: #e0e6f0; /* Texto del popup en color claro */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.callNowButton {
+  background: linear-gradient(90deg, #C7A246 0%, #b38e3e 100%); /* Botón de llamar ahora con degradado */
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  display: inline-flex; /* Para alinear icono y texto */
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.callNowButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(199, 162, 70, 0.4);
+}
+
+.callNowIcon {
+  font-size: 1.5rem;
+}
+
+.popupDisclaimer {
+    color: #a0a8b3; /* Color de texto más tenue para el disclaimer */
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Animación de entrada para el popup */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Media Queries para Responsiveness del Popup y Formulario */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  .formTitle {
+    font-size: 2rem;
+  }
+  .formSubtitle {
+    font-size: 1.1rem;
+  }
+  .input,
+  .textarea {
+    padding: 0.7rem 0.9rem;
+  }
+  .submitButton {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .distributorButton { /* Ajustes para móvil */
+    font-size: 0.95rem;
+    padding: 0.7rem 1.6rem;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .distributorIcon {
+    font-size: 1.1rem;
+  }
+
+  /* Popup responsive */
+  .callPopup {
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  .closePopupButton {
+    font-size: 2rem;
+    top: 0.8rem;
+    right: 1rem;
+  }
+  .popupTitle {
+    font-size: 1.8rem;
+  }
+  .popupText {
+    font-size: 1rem;
+  }
+  .callNowButton {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    gap: 0.6rem;
+  }
+  .callNowIcon {
+    font-size: 1.3rem;
+  }
+  .popupDisclaimer {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 1.5rem;
+  }
+  .formTitle {
+    font-size: 1.8rem;
+  }
+  .formSubtitle {
+    font-size: 1rem;
+  }
+  .input,
+  .textarea {
+    font-size: 0.95rem;
+  }
+  .submitButton {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .distributorButton { /* Ajustes para móvil muy pequeño */
+    font-size: 0.85rem;
+    padding: 0.6rem 1.4rem;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+  .distributorIcon {
+    font-size: 1rem;
+  }
+
+  /* Popup responsive */
+  .callPopup {
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+  }
+  .closePopupButton {
+    font-size: 1.8rem;
+  }
+  .popupTitle {
+    font-size: 1.6rem;
+  }
+  .popupText {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .callNowButton {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+  .callNowIcon {
+    font-size: 1.2rem;
+  }
+  .popupDisclaimer {
+    font-size: 0.8rem;
+  }
+}

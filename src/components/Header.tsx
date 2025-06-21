@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import styles from './Header.module.css';
 
-import vcLogo from '../../public/images/logo-vc.png'; // <--- Usamos la ruta absoluta '/images/logo-vc.png'
+// import vcLogo from '../../public/images/logo-vc.png'; // <--- Usamos la ruta absoluta '/images/logo-vc.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className={styles.logoContainer}>
           <Image
-            src={vcLogo} // Usa la variable importada
+            src='/images/logo-vc.png' // Usa la variable importada
             alt="V-Connection Logo"
             width={160}
             height={40}

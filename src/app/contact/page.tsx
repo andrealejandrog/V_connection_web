@@ -1,119 +1,100 @@
-// app/contact/page.tsx
-'use client';
-
-import React from 'react';
+// src/app/contact/page.tsx
 import styles from './page.module.css';
-// import Image from 'next/image';
-import SectionTitle from '@/components/SectionTitle';
-import Paragraph from '@/components/Paragraph';
 // import Button from '@/components/Button';
 import { FiFacebook, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import ContactForm from '@/components/ContactForm'; // Importa el nuevo componente de formulario de contacto
 
 // Importa el logo de V-Connection
 // import VcLogo from '../../public/vc-removebg-preview.png';
 
 export default function ContactPage() {
-  return ( // <--- Asegúrate de que no hay un ">" aquí
+  return (
     <main className={styles.main}>
-      {/* Sección Hero */}
+      {/* Hero Section */}
       <section className={styles.heroSection}>
-        {/* <Image
-          src={VcLogo}
-          alt="V-Connection Logo"
-          width={800}
-          height={183}
-          className={styles.heroLogo}
-          priority
-        /> */}
-        <h1 className={styles.heroTitle}>Conéctate con el Futuro</h1>
-        <Paragraph className={styles.heroSubtitle}>
-          ¿Listo para transformar tu espacio con tecnología inteligente? Estamos aquí para ayudarte.
-        </Paragraph>
+        {/* Si quieres poner un logo aquí, descomenta esto */}
+        {/* <img src={VcLogo.src} alt="V-Connection Logo" className={styles.heroLogo} /> */}
+        <h1 className={styles.heroTitle}>
+          Conéctate con Nosotros
+        </h1>
+        <p className={styles.heroSubtitle}>
+          ¿Listo para transformar tu visión en realidad? Contáctanos hoy mismo para comenzar tu proyecto. Estamos aquí para escuchar tus ideas y ayudarte a construir el futuro digital de tu negocio.
+        </p>
       </section>
 
-      {/* Contenido Principal */}
-      <div className={styles.contentGridWrapper}>
-        {/* Información de Contacto y Mapa */}
-        <section className={styles.infoMapSection}>
+      {/* Main Content Grid (Contact Form, Info & Map) */}
+      <section className={styles.contentGridWrapper}>
+        <div className={styles.infoMapSection}>
+          {/* PRIMERA COLUMNA: FORMULARIO DE CONTACTO */}
+          <ContactForm />
+
+          {/* SEGUNDA COLUMNA: INFORMACIÓN DE CONTACTO */}
           <div className={styles.contactInfoCard}>
-            <SectionTitle level={2} title="Información de Contacto" className={styles.cardTitle} />
-            <Paragraph className={styles.cardSubtitle}>Nos encantaría escucharte.</Paragraph>
+            <h2 className={styles.cardTitle}>Información de Contacto</h2>
+            <p className={styles.cardSubtitle}>
+              Estamos listos para ayudarte. ¡No dudes en contactarnos a través de cualquiera de los siguientes canales!
+            </p>
 
             <div className={styles.contactDetailItem}>
-              <FiPhone size={24} className={styles.contactIcon} />
+              <FiPhone className={styles.contactIcon} />
               <div>
-                <span className={styles.detailLabel}>Llámanos</span>
-                <a href="tel:+50222987512" className={styles.contactLink}>+502 2298-7512</a><br />
-                <a href="tel:+50253196768" className={styles.contactLink}>+502 5319-6768</a>
+                <span className={styles.detailLabel}>Teléfono:</span>
+                <a href="tel:+50230588632" className={styles.contactLink}>+502 3058 8632</a>
               </div>
             </div>
 
             <div className={styles.contactDetailItem}>
-              <FiMail size={24} className={styles.contactIcon} /> {/* Corregido styles={styles.contactIcon} a className={styles.contactIcon} */}
+              <FiMail className={styles.contactIcon} />
               <div>
-                <span className={styles.detailLabel}>Envíanos un Email</span>
-                <a href="mailto:info@v-connection.com.gt" className={styles.contactLink}>info@v-connection.com.gt</a>
+                <span className={styles.detailLabel}>Email:</span>
+                <a href="mailto:info@vconnection.net" className={styles.contactLink}>info@vconnection.net</a>
               </div>
             </div>
 
             <div className={styles.contactDetailItem}>
-              <FiMapPin size={24} className={styles.contactIcon} />
+              <FiMapPin className={styles.contactIcon} />
               <div>
-                <span className={styles.detailLabel}>Visítanos</span>
+                <span className={styles.detailLabel}>Ubicación:</span>
                 <address className={styles.contactAddress}>
-                  Edificio Torino, Zona 10, Local 105<br />
-                  17 Avenida, Ciudad de Guatemala 01010, Guatemala
+                  Guatemala, Ciudad de Guatemala
                 </address>
               </div>
             </div>
 
             <div className={styles.socialLinks}>
-              <a
-                href="https://www.facebook.com/Vconnectionguatemala"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-                aria-label="Facebook"
-              >
-                <FiFacebook size={28} />
+              <a href="https://www.facebook.com/vconnectionGT" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
+                <FiFacebook />
               </a>
-              <a
-                href="https://www.instagram.com/v_connectiongt/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-                aria-label="Instagram"
-              >
-                <FiInstagram size={28} />
+              <a href="https://www.instagram.com/vconnection_gt/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+                <FiInstagram />
               </a>
+              {/* <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
+                <FiLinkedin />
+              </a> */}
             </div>
           </div>
 
-          {/* Mapa */}
+          {/* TERCERA COLUMNA: MAPA */}
           <div className={styles.mapContainer}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.5204123530665!2d-90.52848552554743!3d14.606782877545938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1f5c6b9d62d%3A0xc3f1a0e1c0c1b4b7!2sEdificio%20Torino!5e0!3m2!1ses!2sgt!4v1700000000000!5m2!1ses!2sgt"
-              title="Ubicación Edificio Torino, Zona 10, Guatemala"
-              className={styles.mapIframe}
-              loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15433.87508688439!2d-90.52844583151853!3d14.61904791556094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a19d7b87c71b%3A0x6b772b2d0b5d9d70!2sGuatemala%20City%2C%20Guatemala!5e0!3m2!1sen!2sgt!4v1700000000000!5m2!1sen!2sgt"
               allowFullScreen={true}
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            />
+              className={styles.mapIframe}
+              title="V-Connection Location"
+            ></iframe>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      {/* Sección Agenda Demo */}
+      {/* Call to Action Section (Comentada en tu CSS) */}
       {/* <section className={styles.ctaSection}>
-        <SectionTitle level={2} title="¿Listo para una demostración?" className={styles.ctaTitle} />
-        <Paragraph className={styles.ctaText}>
-          Agenda una demostración personalizada en nuestro showroom para experimentar el futuro de tu hogar.
-        </Paragraph>
-        <Button
-          href="/agenda-demo"
-          variant="solid"
-          className={styles.ctaButton}
-        >
+        <h2 className={styles.ctaTitle}>¿Listo para empezar?</h2>
+        <p className={styles.ctaText}>
+          Agenda una demostración gratuita con nuestro equipo y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.
+        </p>
+        <Button href="/contact" className={styles.ctaButton}>
           Agenda una Demo
         </Button>
       </section> */}

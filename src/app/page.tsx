@@ -22,7 +22,7 @@ const partnerLogoPaths = {
   partner2: '/images/partners/partner2.png',
   partner3: '/images/partners/partner3.png',
   partner4: '/images/partners/partner4.png',
-  partner5: '/images/partners/partner1.png', // Corrected typo here (was 'partnet5.png')
+  partner5: '/images/partners/partner1.png', 
   partner6: '/images/partners/partner8.png',
   partner7: '/images/partners/partner9.png',
   partner8: '/images/partners/partner10.png',
@@ -46,7 +46,7 @@ const partnerLogoPaths = {
 const servicesData = [
   {
     title: "IoT",
-    description: "VITREA: Nuestra marca hogar para automatizar tu vida. Confort, lujo y seguridad a tu medida. Control remoto, por voz, reconocimiento facial o un toque.",
+    description: "VITREA: Nuestra marca hogar para simplificar tu vida. Automatizar es: Confort, lujo y seguridad a tu medida. Controla tus sistemas de forma remota, por mandos de voz, reconocimiento facial. Lo que decidas en un solo toque.",
     imageUrl: "/images/smart-home-automation-300x169.png",
     imageAlt: "Icono IoT",
     buttonText: "Ver más",
@@ -62,7 +62,7 @@ const servicesData = [
   },
   {
     title: "Alarmas",
-    description: "Sistemas de Intrusión que alertaran y desorientaran a la persona que intente acceder a tu propiedad.",
+    description: "Sistemas de Seguridad contra Intrusión,  que alertan y desorientan a la persona que intente acceder a tu propiedad.",
     imageUrl: "/images/seguridad-2-300x212.jpg",
     imageAlt: "Icono Alarmas",
     buttonText: "Ver más",
@@ -70,7 +70,7 @@ const servicesData = [
   },
   {
     title: "Smart film",
-    description: "Somos representantes de HoHofilm: La película protectora para ventanas que te da control. Reduce el 94% de UV, hasta 96% de transparencia y 84% de ruido. Con tecnología de cambio de estado para privacidad y confort",
+    description: "Somos representantes de HoHofilm: La película protectora para ventanas que te da en cada ambiente según el uso o requerimiento. Reduce el 94% de UV, hasta 96% de transparencia y 84% de ruido. Con tecnología de cambio de estado para privacidad y confort",
     imageUrl: "/images/cortinas-automaticas-2-300x300.jpg",
     imageAlt: "Icono Smart film",
     buttonText: "Ver más",
@@ -78,7 +78,7 @@ const servicesData = [
   },
   {
     title: "Aires acondicionados",
-    description: "Desarrollamos proyectos de aires de confort, precision , tipo paquete , tipo mochila, split, entre otros, garantizamos la climatización de tu data center o bien del ambiente que quieras tener confort y calidad de aire , tradicional o automatizado.",
+    description: "Desarrollamos proyectos de aires de confort, precisión , tipo paquete , tipo mochila, split, entre otros. Garantizamos la climatización de tu hogar, oficina, comercio, data center o bien del ambiente que quieras tener confort y calidad de aire.",
     imageUrl: "/images/AC-Thermostat-1-300x221.png",
     imageAlt: "Icono Aires acondicionados",
     buttonText: "Ver más",
@@ -86,7 +86,7 @@ const servicesData = [
   },
   {
     title: "Cámaras",
-    description: "Eufy security marca que representamos para soluciones inalámbricas con opción de panel solar , baterías internas y conectividad wifi o bien con chip 4g, gestión local y/o remota de alta resolución hasta 4k de resolución.",
+    description: "Eufy security marca que representamos para soluciones de Seguridad inalámbrica. Con cámaras con opción de panel solar , baterías internas recargables y conectividad wifi o bien con chip 4g, gestión local y/o remota de alta resolución hasta 4k de resolución. cámaras interactivas que se integran a sistema de control de acceso, alarma, etc. Formando un sistema completo de seguridad.",
     imageUrl: "/images/seguridad-300x200.jpg",
     imageAlt: "Icono Cámaras",
     buttonText: "Ver más",
@@ -94,7 +94,7 @@ const servicesData = [
   },
   {
     title: "Iluminación",
-    description: "Controla la intensidad de la luz, combina distintos colores, planifica el apagado de luces cuando no las estés utilizando o pídele a Alexa que lo haga por ti.",
+    description: "Controla la intensidad de la luz, combina distintos colores, planifica el apagado de luces cuando no las estés utilizando o pídele a Alexa que lo haga por ti. Crea escenarios para diferentes necesidades de ambientación. Aprovecha un juego de luces para actividades diferentes. ",
     imageUrl: "/images/luces-tenues-300x200.jpg",
     imageAlt: "Icono Iluminación",
     buttonText: "Ver más",
@@ -110,7 +110,7 @@ const servicesData = [
   },
   {
     title: "Audio profesional",
-    description: "Sistemas de audio diseñados para entornos donde se busca una alta calidad de sonido, creamos cines en casa, separamos ambientes para escuchar musica en tu hogar, oficina y/o comercio, trabajamos con diferentes marcas lideres en el mercado.",
+    description: "Sistemas de audio diseñados para entornos donde se busca una alta calidad de sonido, creamos cines en casa, zonificamos ambientes para escuchar musica en las diferentes áreas en tu hogar, oficina y/o comercio, trabajamos con diferentes marcas",
     imageUrl: "/images/audio-2-300x229.jpg",
     imageAlt: "Icono Audio profesional",
     buttonText: "Ver más",
@@ -169,7 +169,7 @@ export default function HomePage() {
               <span className={styles.titleHighlight}>en Inteligente</span>
             </h1>
             <Paragraph className={styles.heroSubtitle}>
-              Controla tu casa desde cualquier lugar con tecnología de última generación
+              Controla tu casa desde cualquier lugar con tecnología de vanguardia
             </Paragraph>
             <div className={styles.buttonGroup}>
               <Button
