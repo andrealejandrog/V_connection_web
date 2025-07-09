@@ -1,24 +1,23 @@
-// src/app/contact/page.tsx
-import styles from './page.module.css';
-// import Button from '@/components/Button';
-import { FiFacebook, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import ContactForm from '@/components/ContactForm'; // Importa el nuevo componente de formulario de contacto
+"use client"; // ¡IMPORTANTE! Marca este componente como Client Component
 
-// Importa el logo de V-Connection
-// import VcLogo from '../../public/vc-removebg-preview.png';
+import React from 'react'; // Importa React
+import styles from './page.module.css';
+import { FiFacebook, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import ContactForm from '@/components/ContactForm';
+import { useLanguage } from '@/app/contexts/LanguageContext'; // Importa el hook de idioma
 
 export default function ContactPage() {
+  const { t } = useLanguage(); // Usa el hook para obtener la función de traducción
+
   return (
     <main className={styles.main}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        {/* Si quieres poner un logo aquí, descomenta esto */}
-        {/* <img src={VcLogo.src} alt="V-Connection Logo" className={styles.heroLogo} /> */}
         <h1 className={styles.heroTitle}>
-          Conéctate con Nosotros
+          {t('contact', 'heroTitle')} {/* Usando la traducción */}
         </h1>
         <p className={styles.heroSubtitle}>
-          ¿Listo para transformar tu visión en realidad? Contáctanos hoy mismo para comenzar tu proyecto. Estamos aquí para escuchar tus ideas y ayudarte a construir el futuro digital de tu negocio.
+          {t('contact', 'heroSubtitle')} {/* Usando la traducción */}
         </p>
       </section>
 
@@ -30,15 +29,15 @@ export default function ContactPage() {
 
           {/* SEGUNDA COLUMNA: INFORMACIÓN DE CONTACTO */}
           <div className={styles.contactInfoCard}>
-            <h2 className={styles.cardTitle}>Información de Contacto</h2>
+            <h2 className={styles.cardTitle}>{t('contact', 'contactInfoCardTitle')}</h2> {/* Usando la traducción */}
             <p className={styles.cardSubtitle}>
-              Estamos listos para ayudarte. ¡No dudes en contactarnos a través de cualquiera de los siguientes canales!
+              {t('contact', 'contactInfoCardSubtitle')} {/* Usando la traducción */}
             </p>
 
             <div className={styles.contactDetailItem}>
               <FiPhone className={styles.contactIcon} />
               <div>
-                <span className={styles.detailLabel}>Teléfono:</span>
+                <span className={styles.detailLabel}>{t('contact', 'phoneLabel')}</span> {/* Usando la traducción */}
                 <a href="tel:+50230588632" className={styles.contactLink}>+502 3058 8632</a>
               </div>
             </div>
@@ -46,38 +45,35 @@ export default function ContactPage() {
             <div className={styles.contactDetailItem}>
               <FiMail className={styles.contactIcon} />
               <div>
-                <span className={styles.detailLabel}>Email:</span>
-                <a href="mailto:info@vconnection.net" className={styles.contactLink}>info@vconnection.net</a>
+                <span className={styles.detailLabel}>{t('contact', 'emailLabel')}</span> {/* Usando la traducción */}
+                <a href="mailto:info@v-connection.com.gt" className={styles.contactLink}>info@v-connection.com.gt</a>
               </div>
             </div>
 
             <div className={styles.contactDetailItem}>
               <FiMapPin className={styles.contactIcon} />
               <div>
-                <span className={styles.detailLabel}>Ubicación:</span>
+                <span className={styles.detailLabel}>{t('contact', 'locationLabel')}</span> {/* Usando la traducción */}
                 <address className={styles.contactAddress}>
-                  Guatemala, Ciudad de Guatemala
+                  {t('contact', 'address')} {/* Usando la traducción */}
                 </address>
               </div>
             </div>
 
             <div className={styles.socialLinks}>
-              <a href="https://www.facebook.com/vconnectionGT" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
+              <a href="https://www.facebook.com/Vconnectionguatemala" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Facebook">
                 <FiFacebook />
               </a>
-              <a href="https://www.instagram.com/vconnection_gt/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
+              <a href="https://www.instagram.com/v_connectiongt/" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="Instagram">
                 <FiInstagram />
               </a>
-              {/* <a href="#" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
-                <FiLinkedin />
-              </a> */}
             </div>
           </div>
 
           {/* TERCERA COLUMNA: MAPA */}
           <div className={styles.mapContainer}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15433.87508688439!2d-90.52844583151853!3d14.61904791556094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a19d7b87c71b%3A0x6b772b2d0b5d9d70!2sGuatemala%20City%2C%20Guatemala!5e0!3m2!1sen!2sgt!4v1700000000000!5m2!1sen!2sgt"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.1901068397983!2d-90.50673768916164!3d14.588240677320004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a39587c63aa7%3A0xeabb2473a4e3f1f0!2sEdificio%20Torino%2C%2019-70%2C%2017%20Avenida%2C%20Ciudad%20de%20Guatemala%2001010!5e0!3m2!1ses!2sgt!4v1752075228019!5m2!1ses!2sgt"
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -87,17 +83,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Call to Action Section (Comentada en tu CSS) */}
-      {/* <section className={styles.ctaSection}>
-        <h2 className={styles.ctaTitle}>¿Listo para empezar?</h2>
-        <p className={styles.ctaText}>
-          Agenda una demostración gratuita con nuestro equipo y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.
-        </p>
-        <Button href="/contact" className={styles.ctaButton}>
-          Agenda una Demo
-        </Button>
-      </section> */}
     </main>
   );
 }

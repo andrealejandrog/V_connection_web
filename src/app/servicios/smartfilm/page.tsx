@@ -1,20 +1,38 @@
 "use client";
 import React from 'react';
 import styles from './SmartFilm.module.css';
-// import Image from 'next/image';
+import Image from 'next/image';
+import { useLanguage } from '@/app/contexts/LanguageContext'; // Importa el hook de idioma
 
 export default function SmartFilmPage() {
+  const { t } = useLanguage(); // Obtiene la función t para traducir
+
+  // Array con la información de las imágenes para las tarjetas
+  const cardImages = [
+    {
+      src: "https://v-connection.local/wp-content/uploads/elementor/thumbs/f1856248c7cfd15d80db4a3bb3052989-pve12bb147muw4o9o392p3fe5lxc73nj6eskk7ndvc.jpg",
+      alt: t('curtains', 'image1Alt'),
+    },
+    {
+      src: "/images/8-16sq-m-Privacy-smart-window-film-PDLC-Smart-window-foil-for-home-office-decals.jpg_Q90.jpg_-300x300.webp",
+      alt: t('curtains', 'image2Alt'),
+    },
+    {
+      src: "https://v-connection.local/wp-content/uploads/elementor/thumbs/8-16sq-m-Privacy-smart-window-film-PDLC-Smart-window-foil-for-home-office-decals.jpg_Q90.jpg_-pve12bb147muw4o9o392p3fe5lxc73nj6eskk7ndvc.webp",
+      alt: t('curtains', 'image3Alt'),
+    },
+  ];
+
   return (
     <div className={styles.smartFilmContainer}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <h1 className={styles.heroTitle}>CORTINAS AUTOMÁTICAS</h1>
+        <h1 className={styles.heroTitle}>{t('curtains', 'heroTitle')}</h1>
         <p className={styles.heroText}>
-          Elige el nivel de privacidad que necesitas de acuerdo a tus necesidades.<br />
-          Todo a al alcance de tu mano y de una manera simple y elegante.
+          {t('curtains', 'heroText')}
         </p>
         <a href="#verMas" className={styles.ctaButton}>
-          VER MÁS
+          {t('curtains', 'ctaButton')}
         </a>
       </section>
 
@@ -27,13 +45,13 @@ export default function SmartFilmPage() {
               <path d="M19,0H5A5.006,5.006,0,0,0,0,5V6A3,3,0,0,0,1,8.234V19a5.006,5.006,0,0,0,5,5H18a5.006,5.006,0,0,0,5-5V8.234A3,3,0,0,0,24,6V5A5.006,5.006,0,0,0,19,0ZM2,5A3,3,0,0,1,5,2H19a3,3,0,0,1,3,3V6a1,1,0,0,1-1,1H3A1,1,0,0,1,2,6ZM21,19a3,3,0,0,1-3,3H6a3,3,0,0,1-3-3V9H21Z"></path>
             </svg>
           </div>
-          <h4 className={styles.featureTitle}>Cortinas Automáticas</h4>
-          <p className={styles.featureSubtitle}>Smart Film</p>
+          <h4 className={styles.featureTitle}>{t('curtains', 'featureTitle')}</h4>
+          <p className={styles.featureSubtitle}>{t('curtains', 'featureSubtitle')}</p>
           <p className={styles.featureText}>
-            Película de atenuación funcional y conmutable de pantalla de cristal líquido que utiliza cristal líquido dispersos de polímero (PDLC) como estructura de pantalla.
+            {t('curtains', 'featureText1')}
           </p>
           <p className={styles.featureText}>
-            Ideal para oficinas, residencias, hoteles, público, display.
+            {t('curtains', 'featureText2')}
           </p>
         </div>
 
@@ -41,76 +59,92 @@ export default function SmartFilmPage() {
         <div className={styles.featuresGrid}>
           <div className={styles.featureCard}>
             <div className={styles.cardImage}>
-              {/* <Image 
-                src="https://v-connection.local/wp-content/uploads/elementor/thumbs/f1856248c7cfd15d80db4a3bb3052989-pve12bb147muw4o9o392p3fe5lxc73nj6eskk7ndvc.jpg"
-                alt="Cortinas inteligentes domotica"
-                width={600}
-                height={400}
+              <Image
+                src={cardImages[0].src}
+                alt={cardImages[0].alt}
+                fill
+                style={{ objectFit: 'cover' }}
                 className={styles.image}
-              /> */}
+              />
             </div>
-            <h6 className={styles.cardTitle}>¿Cómo funciona?</h6>
+            <h6 className={styles.cardTitle}>{t('curtains', 'featureCard1Title')}</h6>
             <p className={styles.cardText}>
-              Cuando se aplica electricidad a la película a través del cableado, los cristales líquidos se alinean y la ventana se vuelve transparente al instante. Cuando se apaga la alimentación, los cristales líquidos vuelven a sus posiciones dispersas normales, lo que hace que el vidrio sea opaco.
+              {t('curtains', 'featureCard1Text')}
             </p>
           </div>
 
           <div className={styles.featureCard}>
             <div className={styles.cardImage}>
-              {/* <Image 
-                src="/images/8-16sq-m-Privacy-smart-window-film-PDLC-Smart-window-foil-for-home-office-decals.jpg_Q90.jpg_-300x300.webp"
-                alt="Cortinas automáticas"
-                width={600}
-                height={400}
+              <Image
+                src={cardImages[1].src}
+                alt={cardImages[1].alt}
+                fill
+                style={{ objectFit: 'cover' }}
                 className={styles.image}
-              /> */}
+              />
             </div>
-            <h6 className={styles.cardTitle}>Beneficios</h6>
+            <h6 className={styles.cardTitle}>{t('curtains', 'featureCard2Title')}</h6>
             <p className={styles.cardText}>
-              Protección de privacidad y partición de habitaciones, bloqueo de los rayos del sol, 99% UV, 98% rayos IR.
+              {t('curtains', 'featureCard2Text1')}
             </p>
             <p className={styles.cardText}>
-              Protegiendo la decoloración y el amarillamiento de sus interiores, buscando proteger a las personas de enfermedades causadas por la luz solar directa.
+              {t('curtains', 'featureCard2Text2')}
             </p>
             <p className={styles.cardText}>
-              Aislamiento acústico: puede bloquear el ruido 20% más que el vidrio normal. La garantía es de 2 años y se estima una duración de más de 10 años.
+              {t('curtains', 'featureCard2Text3')}
             </p>
           </div>
 
           <div className={styles.featureCard}>
             <div className={styles.cardImage}>
-              {/* <Image 
-                src="https://v-connection.local/wp-content/uploads/elementor/thumbs/8-16sq-m-Privacy-smart-window-film-PDLC-Smart-window-foil-for-home-office-decals.jpg_Q90.jpg_-pve12bb147muw4o9o392p3fe5lxc73nj6eskk7ndvc.webp"
-                alt="Cortina Inteligente Automatizada"
-                width={600}
-                height={400}
+              <Image
+                src={cardImages[2].src}
+                alt={cardImages[2].alt}
+                fill
+                style={{ objectFit: 'cover' }}
                 className={styles.image}
-              /> */}
+              />
             </div>
-            <h6 className={styles.cardTitle}>Fácil instalación</h6>
+            <h6 className={styles.cardTitle}>{t('curtains', 'featureCard3Title')}</h6>
             <p className={styles.cardText}>
-              Control múltiple como interruptor de pared, sensores, control remoto, control de voz, aplicación, domótica, etc.
+              {t('curtains', 'featureCard3Text1')}
             </p>
             <p className={styles.cardText}>
-              Fácil de diseñar, instalar y configurar.
+              {t('curtains', 'featureCard3Text2')}
             </p>
           </div>
         </div>
 
         {/* Demo Section */}
         <div className={styles.demoSection}>
-          <h4 className={styles.demoTitle}>Una pequeña demostración del producto</h4>
-          <p className={styles.demoSubtitle}>¿Cómo funciona?</p>
+          <h4 className={styles.demoTitle}>{t('curtains', 'demoTitle')}</h4>
+          <p className={styles.demoSubtitle}>{t('curtains', 'demoSubtitle')}</p>
           <div className={styles.videoContainer}>
             <video controls className={styles.video}>
-              <source 
-                src="/images/WhatsApp-Video-2022-09-27-at-8.05.20-PM.mp4" 
-                type="video/mp4" 
+              <source
+                src="/images/WhatsApp-Video-2022-09-27-at-8.05.20-PM.mp4"
+                type="video/mp4"
               />
-              Tu navegador no soporta el elemento de video.
+              {t('curtains', 'videoNotSupported')}
             </video>
           </div>
         </div>
+
+        {/* New Section for Provider/More Info */}
+        <section className={styles.providerSection}>
+          <h5 className={styles.providerTitle}>{t('curtains', 'providerTitle')}</h5>
+          <p className={styles.providerText}>
+            {t('curtains', 'providerText')}
+          </p>
+          <a
+            href="https://www.gauzy.com/pdlc-smart-film/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.providerLink}
+          >
+            {t('curtains', 'providerLink')}
+          </a>
+        </section>
       </section>
     </div>
   );

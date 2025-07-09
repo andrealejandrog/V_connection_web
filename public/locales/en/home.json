@@ -1,0 +1,89 @@
+{
+  "heroTitlePart1": "Transform",
+  "heroTitlePart2": "Your Home",
+  "heroTitlePart3": "into a Smart Home",
+  "heroSubtitle": "Control your home from anywhere with cutting-edge technology",
+  "exploreServicesAriaLabel": "Explore our services",
+  "discoverHowButton": "Discover How",
+  "heroImageAlt": "Smart automation system",
+
+  "servicesBadge": "Our Services",
+  "servicesSectionTitle": "Automation and Domotics Solutions for Every Space",
+
+  "serviceIoTTitle": "IoT",
+  "serviceIoTDescription": "VITREA: Our home brand to simplify your life. Automating means: Comfort, luxury, and security tailored to you. Control your systems remotely, by voice commands, facial recognition. Whatever you decide with a single touch.",
+  "serviceIoTAlt": "IoT Icon",
+
+  "serviceAccessControlTitle": "Access Control",
+  "serviceAccessControlDescription": "Systems for door opening by fingerprint, code, NFC, registering each access, local or remote opening.",
+  "serviceAccessControlAlt": "Access Control Icon",
+
+  "serviceSmartGatesTitle": "Smart Gates",
+  "serviceSmartGatesDescription": "We install and integrate electric gate systems and connect them to your wireless network so you have local and off-home control, openings by remote command and voice commands. We support you from planning design to programming the entire system.",
+  "serviceSmartGatesAlt": "Smart Gates Icon",
+
+  "serviceSmartFilmTitle": "Smart Film",
+  "serviceSmartFilmDescription": "We are representatives of HoHofilm: The protective window film that gives you what you need in each environment based on use or requirement. Reduces 94% UV, up to 96% transparency, and 84% noise. With state-change technology for privacy and comfort.",
+  "serviceSmartFilmAlt": "Smart Film Icon",
+
+  "serviceACCTitle": "Air Conditioning",
+  "serviceACDescription": "We develop projects for comfort air, precision, packaged type, rooftop type, split, among others. We guarantee the climate control of your home, office, business, data center, or any environment you want to have comfort and air quality.",
+  "serviceACCAlt": "Air Conditioning Icon",
+
+  "serviceCamerasTitle": "Cameras",
+  "serviceCamerasDescription": "Eufy security, a brand we represent for wireless security solutions. With cameras with solar panel option, internal rechargeable batteries, and Wi-Fi or 4G chip connectivity, local and/or remote management with up to 4K resolution. Interactive cameras that integrate with access control, alarm systems, etc., forming a complete security system.",
+  "serviceCamerasAlt": "Cameras Icon",
+
+  "serviceLightingTitle": "Lighting",
+  "serviceLightingDescription": "Control light intensity, combine different colors, schedule lights to turn off when not in use, or ask Alexa to do it for you. Create scenarios for different ambiance needs. Take advantage of a light play for different activities.",
+  "serviceLightingAlt": "Lighting Icon",
+
+  "serviceNetworksTitle": "Networks",
+  "serviceNetworksDescription": "We work hand in hand with Eero to create mesh wireless networks. We support wireless network studies and install high-efficiency equipment so that your Browse is not affected when connecting to each smart device. These devices manage parental control to help you manage what your children see on the internet today.",
+  "serviceNetworksAlt": "Networks Icon",
+
+  "serviceProfessionalAudioTitle": "Professional Audio",
+  "serviceProfessionalAudioDescription": "Audio systems designed for environments where high sound quality is sought. We create home cinemas, zone environments to listen to music in different areas of your home, office, and/or business. We work with different brands.",
+  "serviceProfessionalAudioAlt": "Professional Audio Icon",
+
+
+  "aboutSectionTitle": "Our Process: Design, Advise, and Install Your Smart Home",
+  "designFeature": "Design: We create your projects based on your tastes and needs, integrating an elegant environment with a fresh and technological atmosphere.",
+  "adviseFeature": "Advise: We provide technical advice so you can make the best choice and meet all your needs during the development of the project.",
+  "installFeature": "Install: We carry out the installation and configuration of your equipment, providing a technical report and a 2-year warranty, in addition to guaranteeing good after-sales service.",
+  "aboutImageAlt": "Smart control system",
+
+  "partnersBadge": "Our Partners",
+  "partnersSectionTitle": "We Work with the Best Brands in Smart Home Technology",
+
+  "partner1Alt": "Partner Logo 1",
+  "partner2Alt": "Partner Logo 2",
+  "partner3Alt": "Partner Logo 3",
+  "partner4Alt": "Partner Logo 4",
+  "partner5Alt": "Partner Logo 5",
+  "partner6Alt": "Partner Logo 6",
+  "partner7Alt": "Partner Logo 7",
+  "partner8Alt": "Partner Logo 8",
+  "partner9Alt": "Partner Logo 9",
+  "partner10Alt": "Partner Logo 10",
+  "partner11Alt": "Partner Logo 11",
+  "partner12Alt": "Partner Logo 12",
+  "partner13Alt": "Partner Logo 13",
+  "partner14Alt": "Partner Logo 14",
+  "partner15Alt": "Partner Logo 15",
+  "partner16Alt": "Partner Logo 16",
+  "partner17Alt": "Partner Logo 17",
+  "partner18Alt": "Partner Logo 18",
+  "partner19Alt": "Partner Logo 19",
+  "partner20Alt": "Partner Logo 20",
+  "partner21Alt": "Partner Logo 21",
+  "partner22Alt": "Partner Logo 22",
+  "partner23Alt": "Partner Logo 23",
+  "partner24Alt": "Partner Logo 24",
+
+  "organizationName": "V-Connection S.A.",
+  "businessName": "V-Connection S.A.",
+  "addressStreet": "Edificio Torino I , Zona 10, 19-70, 17 Avenue",
+  "addressLocality": "Guatemala City",
+  "addressRegion": "Guatemala"
+}

@@ -7,25 +7,30 @@ import Image from 'next/image';
 import SectionTitle from '@/components/SectionTitle';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
-
-// Importa los componentes de react-slick
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import { useLanguage } from '@/app/contexts/LanguageContext'; // Importa el hook de idioma
 
 export default function AboutPage() {
+  const { t } = useLanguage(); // Obtiene la función t para traducir
+
   const showroomImages = [
-    '/images/showroom/show1.jpg', // Asegúrate de que estas rutas existan en /public/images/!
-    '/images/showroom/show2.jpg',
-    '/images/showroom/show3.jpg',
-    '/images/showroom/show4.jpg',
-    '/images/showroom/show5.jpg',
-    '/images/showroom/show6.jpg',
-    '/images/showroom/show7.jpg',
-    '/images/showroom/show8.jpg',
-    '/images/showroom/show9.jpg',
-    '/images/showroom/show10.jpg', // Añadida la imagen original del showroom al carrusel
+    '/images/showroom/show1.webp',
+    '/images/showroom/show2.webp',
+    '/images/showroom/show3.webp',
+    '/images/showroom/show4.webp',
+    '/images/showroom/show5.webp',
+    '/images/showroom/show6.webp',
+    '/images/showroom/show7.webp',
+    '/images/showroom/show8.webp',
+    '/images/showroom/show9.webp',
+    '/images/showroom/show10.webp',
+    '/images/showroom/show11.webp',
+    '/images/showroom/show12.webp',
+    '/images/showroom/show13.webp',
+    '/images/showroom/show14.webp',
+    '/images/showroom/show15.webp',
   ];
 
   const settings = {
@@ -48,27 +53,27 @@ export default function AboutPage() {
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
             <h1 className={styles.heroTitle}>
-              <span className={styles.titleGradient}>VITREA</span><br />
-              Sensación de Seguridad
+              <span className={styles.titleGradient}>{t('about', 'heroTitlePart1')}</span><br />
+              {t('about', 'heroTitlePart2')}
             </h1>
             <Paragraph className={styles.heroSubtitle}>
-              Más de una década transformando hogares en Guatemala con tecnología inteligente
+              {t('about', 'heroSubtitle')}
             </Paragraph>
             <div className={styles.buttonGroup}>
               <Button
                 href="#quienes-somos"
                 className={styles.ctaButton}
-                aria-label="Conoce más sobre nosotros"
+                aria-label={t('about', 'ctaButton1')}
               >
-                Conoce más
+                {t('about', 'ctaButton1')}
                 <span className={styles.buttonArrow}>→</span>
               </Button>
               <Button
-                href="/agenda-demo"
+                href="/contact"
                 variant="outline"
                 className={styles.secondaryButton}
               >
-                Agenda Demo
+                {t('about', 'ctaButton2')}
               </Button>
             </div>
           </div>
@@ -86,26 +91,24 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Sección Quiénes Somos (Mantenida como estaba originalmente) */}
+      {/* Sección Quiénes Somos */}
       <section id="quienes-somos" className={`${styles.section} ${styles.sectionAnimation}`}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
-            <SectionTitle level={2} title="¿Quiénes somos?" className={styles.sectionTitle} />
+            <SectionTitle level={2} title={t('about', 'whoWeAreTitle')} className={styles.sectionTitle} />
             <Paragraph className={styles.aboutDescription}>
-              Somos <strong>VITREA</strong>, líderes en sistemas de automatización y seguridad en Guatemala.
-              Desde 2010, hemos estado transformando hogares y negocios con tecnología inteligente
-              que combina diseño elegante con funcionalidad avanzada.
+              {/* Usamos dangerouslySetInnerHTML porque la cadena tiene una etiqueta <strong> */}
+              <span dangerouslySetInnerHTML={{ __html: t('about', 'whoWeAreDescription1') }} />
             </Paragraph>
             <Paragraph className={styles.aboutDescription}>
-              Nuestro showroom en Zona 10 es un espacio donde puedes experimentar personalmente
-              cómo nuestra tecnología puede mejorar tu calidad de vida.
+              {t('about', 'whoWeAreDescription2')}
             </Paragraph>
             <Button
-              href="/showroom"
+              href="/contact"
               className={styles.ctaButton}
               style={{ marginTop: '2rem' }}
             >
-              Visita nuestro Showroom
+              {t('about', 'showroomButton')}
             </Button>
           </div>
           <div className={styles.aboutImage}>
@@ -120,10 +123,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* NUEVA Sección dedicada EXCLUSIVAMENTE al Showroom con Carrusel */}
+      {/* Sección Showroom */}
       <section className={`${styles.sectionDark} ${styles.sectionAnimation}`}>
         <div className={styles.aboutContent}>
-          {/* El Carrusel de Imágenes del Showroom */}
           <div className={`${styles.aboutImage} ${styles.carouselContainer}`}>
             <Slider {...settings} className={styles.showroomSlider}>
               {showroomImages.map((image, index) => (
@@ -131,7 +133,7 @@ export default function AboutPage() {
                   <div className={styles.slideImageWrapper}>
                     <Image
                       src={image}
-                      alt={`Imagen ${index + 1} del Showroom VITREA`}
+                      alt={`${t('about', 'showroomImageAlt')} ${index + 1}`}
                       fill
                       className={styles.slideImage}
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -141,22 +143,20 @@ export default function AboutPage() {
               ))}
             </Slider>
           </div>
-          {/* El texto descriptivo del Showroom (en el lado opuesto del carrusel) */}
           <div className={styles.aboutText}>
-            <SectionTitle level={2} title="Nuestro Showroom" className={styles.sectionTitle} />
+            <SectionTitle level={2} title={t('about', 'showroomSectionTitle')} className={styles.sectionTitle} />
             <Paragraph className={styles.aboutDescription}>
-              Visita nuestro espacio exclusivo en Zona 10 y experimenta personalmente cómo la
-              tecnología inteligente puede transformar tu hogar.
+              {t('about', 'showroomDescription')}
             </Paragraph>
             <ul className={styles.featuresList}>
               <li className={styles.featureItem}>
-                <span className={styles.featureIcon}>📍</span> Edificio Torino, Zona 10, 19-70, 17 Avenida, Ciudad de Guatemala 01010, Guatemala
+                {t('about', 'showroomAddress')}
               </li>
               <li className={styles.featureItem}>
-                <span className={styles.featureIcon}>🕒</span> Lunes a Viernes: 9:00 - 18:00
+                {t('about', 'showroomHours')}
               </li>
               <li className={styles.featureItem}>
-                <span className={styles.featureIcon}>📅</span> Agenda tu visita con anticipación
+                {t('about', 'showroomAppointment')}
               </li>
             </ul>
           </div>

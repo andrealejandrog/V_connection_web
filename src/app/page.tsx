@@ -1,22 +1,19 @@
+// app/page.tsx
 "use client";
 
 import React, { useEffect } from 'react';
 import styles from './page.module.css';
-// import Logo from '@/components/Logo'; // Asegúrate de que si lo usas, esté descomentado
 import SectionTitle from '@/components/SectionTitle';
 import Paragraph from '@/components/Paragraph';
-import ImageComponent from '@/components/ImageComponent'; // Assuming this wraps next/image or <img>
+import ImageComponent from '@/components/ImageComponent';
 import Button from '@/components/Button';
 import ServiceCard from '@/components/ServiceCard';
 import PartnerLogo from '@/components/PartnerLogo';
+import { useLanguage } from './contexts/LanguageContext';
 
-// --- IMAGES: Use direct paths relative to the 'public' directory for static export ---
-// If your image is in `public/images/white-living-room-furniture.jpg`,
-// the path you use is `/images/white-living-room-furniture.jpg`.
-const heroImagePath = '/images/white-living-room-furniture.jpg';
-const controladorDomoticaPath = '/images/c419fb0ce87e9e1ae39ea83a9f66e340.jpg';
+const heroImagePath = '/images/white-living-room-furniture.webp';
+const controladorDomoticaPath = '/images/c419fb0ce87e9e1ae39ea83a9f66e340.webp';
 
-// Paths for partner logos - ENSURE THESE MATCH YOUR ACTUAL FILENAMES EXACTLY (case-sensitive)
 const partnerLogoPaths = {
   partner1: '/images/partners/partnet5.png',
   partner2: '/images/partners/partner2.png',
@@ -40,111 +37,124 @@ const partnerLogoPaths = {
   partner20: '/images/partners/partner20.png',
   partner21: '/images/partners/partner21.png',
   partner22: '/images/partners/partner22.jpg',
+  partner23: '/images/partners/partner23.png',
+  partner24: '/images/partners/partner24.png',
 };
 
-// --- Datos centralizados para las tarjetas de servicio ---
 const servicesData = [
   {
-    title: "IoT",
-    description: "VITREA: Nuestra marca hogar para simplificar tu vida. Automatizar es: Confort, lujo y seguridad a tu medida. Controla tus sistemas de forma remota, por mandos de voz, reconocimiento facial. Lo que decidas en un solo toque.",
-    imageUrl: "/images/smart-home-automation-300x169.png",
-    imageAlt: "Icono IoT",
-    buttonText: "Ver más",
+    titleKey: "serviceIoTTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceIoTDescription", 
+    imageUrl: "/images/Iot_s.jpg",
+    imageAltKey: "serviceIoTAlt",
+    buttonTextKey: "viewMoreButton", 
     buttonLink: "/servicios/iot",
   },
   {
-    title: "Control de acceso",
-    description: "Sistemas para la apertura de puerta por medio de huella, código, NFC, registrando cada acceso, apertura local o remota.",
-    imageUrl: "/images/ingreso-con-huella-2-1-251x300.webp",
-    imageAlt: "Icono Control de acceso",
-    buttonText: "Ver más",
+    titleKey: "serviceAccessControlTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceAccessControlDescription", 
+    imageUrl: "/images/CA.jpg",
+    imageAltKey: "serviceAccessControlAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/control-de-accesos",
   },
   {
-    title: "Alarmas",
-    description: "Sistemas de Seguridad contra Intrusión,  que alertan y desorientan a la persona que intente acceder a tu propiedad.",
-    imageUrl: "/images/seguridad-2-300x212.jpg",
-    imageAlt: "Icono Alarmas",
-    buttonText: "Ver más",
-    buttonLink: "/servicios/alarmas",
+    titleKey: "serviceSmartGatesTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceSmartGatesDescription", 
+    imageUrl: "/images/porton.jpg",
+    imageAltKey: "serviceSmartGatesAlt",
+    buttonTextKey: "viewMoreButton",
+    buttonLink: "/servicios/Portones-Inteligentes",
   },
   {
-    title: "Smart film",
-    description: "Somos representantes de HoHofilm: La película protectora para ventanas que te da en cada ambiente según el uso o requerimiento. Reduce el 94% de UV, hasta 96% de transparencia y 84% de ruido. Con tecnología de cambio de estado para privacidad y confort",
-    imageUrl: "/images/cortinas-automaticas-2-300x300.jpg",
-    imageAlt: "Icono Smart film",
-    buttonText: "Ver más",
+    titleKey: "serviceSmartFilmTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceSmartFilmDescription", 
+    imageUrl: "/images/sf.jpg",
+    imageAltKey: "serviceSmartFilmAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/smartfilm",
   },
   {
-    title: "Aires acondicionados",
-    description: "Desarrollamos proyectos de aires de confort, precisión , tipo paquete , tipo mochila, split, entre otros. Garantizamos la climatización de tu hogar, oficina, comercio, data center o bien del ambiente que quieras tener confort y calidad de aire.",
+    titleKey: "serviceACCTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceACDescription", 
     imageUrl: "/images/AC-Thermostat-1-300x221.png",
-    imageAlt: "Icono Aires acondicionados",
-    buttonText: "Ver más",
+    imageAltKey: "serviceACCAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/aire-acondicionado/",
   },
   {
-    title: "Cámaras",
-    description: "Eufy security marca que representamos para soluciones de Seguridad inalámbrica. Con cámaras con opción de panel solar , baterías internas recargables y conectividad wifi o bien con chip 4g, gestión local y/o remota de alta resolución hasta 4k de resolución. cámaras interactivas que se integran a sistema de control de acceso, alarma, etc. Formando un sistema completo de seguridad.",
-    imageUrl: "/images/seguridad-300x200.jpg",
-    imageAlt: "Icono Cámaras",
-    buttonText: "Ver más",
+    titleKey: "serviceCamerasTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceCamerasDescription", 
+    imageUrl: "/images/camera.jpg",
+    imageAltKey: "serviceCamerasAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/camaras-de-seguridad",
   },
   {
-    title: "Iluminación",
-    description: "Controla la intensidad de la luz, combina distintos colores, planifica el apagado de luces cuando no las estés utilizando o pídele a Alexa que lo haga por ti. Crea escenarios para diferentes necesidades de ambientación. Aprovecha un juego de luces para actividades diferentes. ",
-    imageUrl: "/images/luces-tenues-300x200.jpg",
-    imageAlt: "Icono Iluminación",
-    buttonText: "Ver más",
+    titleKey: "serviceLightingTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceLightingDescription", 
+    imageUrl: "/images/ilumina.jpg",
+    imageAltKey: "serviceLightingAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/iluminacion/",
   },
   {
-    title: "Redes",
-    description: "Desarrollamos proyectos de redes para que puedas tener internet confiable y de calidad en tu hogar o negocio.",
-    imageUrl: "/images/freepik__upload__63591 (1).png",
-    imageAlt: "Icono Redes",
-    buttonText: "Ver más",
+    titleKey: "serviceNetworksTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceNetworksDescription", 
+    imageUrl: "/images/aero.jpg",
+    imageAltKey: "serviceNetworksAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/redes",
   },
   {
-    title: "Audio profesional",
-    description: "Sistemas de audio diseñados para entornos donde se busca una alta calidad de sonido, creamos cines en casa, zonificamos ambientes para escuchar musica en las diferentes áreas en tu hogar, oficina y/o comercio, trabajamos con diferentes marcas",
-    imageUrl: "/images/audio-2-300x229.jpg",
-    imageAlt: "Icono Audio profesional",
-    buttonText: "Ver más",
+    titleKey: "serviceProfessionalAudioTitle",
+    // CAMBIO AQUÍ: Usamos una clave para la descripción
+    descriptionKey: "serviceProfessionalAudioDescription", 
+    imageUrl: "/images/audio.jpg",
+    imageAltKey: "serviceProfessionalAudioAlt",
+    buttonTextKey: "viewMoreButton",
     buttonLink: "/servicios/audio",
   },
 ];
 
-// --- Datos centralizados para los logos de partners ---
 const partnersData = [
-  { imageUrl: partnerLogoPaths.partner1, alt: "Logo Partner 1" },
-  { imageUrl: partnerLogoPaths.partner2, alt: "Logo Partner 2" },
-  { imageUrl: partnerLogoPaths.partner3, alt: "Logo Partner 3" },
-  { imageUrl: partnerLogoPaths.partner4, alt: "Logo Partner 4" },
-  { imageUrl: partnerLogoPaths.partner5, alt: "Logo Partner 5" },
-  { imageUrl: partnerLogoPaths.partner6, alt: "Logo Partner 6" },
-  { imageUrl: partnerLogoPaths.partner7, alt: "Logo Partner 7" },
-  { imageUrl: partnerLogoPaths.partner8, alt: "Logo Partner 8" },
-  { imageUrl: partnerLogoPaths.partner9, alt: "Logo Partner 9" },
-  { imageUrl: partnerLogoPaths.partner10, alt: "Logo Partner 10" },
-  { imageUrl: partnerLogoPaths.partner11, alt: "Logo Partner 11" },
-  { imageUrl: partnerLogoPaths.partner12, alt: "Logo Partner 12" },
-  { imageUrl: partnerLogoPaths.partner13, alt: "Logo Partner 13" },
-  { imageUrl: partnerLogoPaths.partner14, alt: "Logo Partner 14" },
-  { imageUrl: partnerLogoPaths.partner15, alt: "Logo Partner 15" },
-  { imageUrl: partnerLogoPaths.partner16, alt: "Logo Partner 16" },
-  { imageUrl: partnerLogoPaths.partner17, alt: "Logo Partner 17" },
-  { imageUrl: partnerLogoPaths.partner18, alt: "Logo Partner 18" },
-  { imageUrl: partnerLogoPaths.partner19, alt: "Logo Partner 19" },
-  { imageUrl: partnerLogoPaths.partner20, alt: "Logo Partner 20" },
-  { imageUrl: partnerLogoPaths.partner21, alt: "Logo Partner 21" },
-  { imageUrl: partnerLogoPaths.partner22, alt: "Logo Partner 22" },
+  { imageUrl: partnerLogoPaths.partner1, altKey: "partner1Alt" },
+  { imageUrl: partnerLogoPaths.partner2, altKey: "partner2Alt" },
+  { imageUrl: partnerLogoPaths.partner3, altKey: "partner3Alt" },
+  { imageUrl: partnerLogoPaths.partner4, altKey: "partner4Alt" },
+  { imageUrl: partnerLogoPaths.partner5, altKey: "partner5Alt" }, 
+  { imageUrl: partnerLogoPaths.partner6, altKey: "partner6Alt" },
+  { imageUrl: partnerLogoPaths.partner7, altKey: "partner7Alt" },
+  { imageUrl: partnerLogoPaths.partner8, altKey: "partner8Alt" },
+  { imageUrl: partnerLogoPaths.partner9, altKey: "partner9Alt" },
+  { imageUrl: partnerLogoPaths.partner10, altKey: "partner10Alt" },
+  { imageUrl: partnerLogoPaths.partner11, altKey: "partner11Alt" },
+  { imageUrl: partnerLogoPaths.partner12, altKey: "partner12Alt" },
+  { imageUrl: partnerLogoPaths.partner13, altKey: "partner13Alt" },
+  { imageUrl: partnerLogoPaths.partner14, altKey: "partner14Alt" },
+  { imageUrl: partnerLogoPaths.partner15, altKey: "partner15Alt" },
+  { imageUrl: partnerLogoPaths.partner16, altKey: "partner16Alt" },
+  { imageUrl: partnerLogoPaths.partner17, altKey: "partner17Alt" },
+  { imageUrl: partnerLogoPaths.partner18, altKey: "partner18Alt" },
+  { imageUrl: partnerLogoPaths.partner19, altKey: "partner19Alt" },
+  { imageUrl: partnerLogoPaths.partner20, altKey: "partner20Alt" },
+  { imageUrl: partnerLogoPaths.partner21, altKey: "partner21Alt" },
+  { imageUrl: partnerLogoPaths.partner22, altKey: "partner22Alt" },
+  { imageUrl: partnerLogoPaths.partner23, altKey: "partner23Alt" },
+  { imageUrl: partnerLogoPaths.partner24, altKey: "partner24Alt" },
 ];
 
 export default function HomePage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -152,32 +162,101 @@ export default function HomePage() {
       });
     }, { threshold: 0.1 });
 
-    const sections = document.querySelectorAll(`.${styles.sectionAnimation}`);
-    sections.forEach(el => observer.observe(el));
+    const animatableElements = document.querySelectorAll(`
+      .${styles.sectionHeader},
+      .${styles.servicesGrid} > *,
+      .${styles.aboutContent},
+      .${styles.featuresList} > *,
+      .${styles.partnersGrid} > *
+    `);
 
-    return () => observer.disconnect();
+    animatableElements.forEach(el => observer.observe(el));
+
+    return () => animatableElements.forEach(el => observer.unobserve(el));
   }, []);
+
+  const currentDomain = "https://v-connection-webpage.web.app";
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": t('schema', 'organizationName'),
+    "url": currentDomain,
+    "logo": `${currentDomain}/images/Vitrea-logo-blanco-02.png`, 
+    "sameAs": [
+      "https://www.vitrea-sh.com",
+      "https://www.facebook.com/Vconnectionguatemala",
+      "https://www.instagram.com/v_connectiongt/"
+    ]
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "HomeAutomationCompany", 
+    "name": t('schema', 'businessName'),
+    "image": `${currentDomain}/images/white-living-room-furniture.webp`,
+    "url": currentDomain,
+    "telephone": "+50222987512",
+    "email": "mailto:info@v-connection.com.gt",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": t('schema', 'addressStreet'),
+      "addressLocality": t('schema', 'addressLocality'),
+      "addressRegion": t('schema', 'addressRegion'),
+      "postalCode": "01010",
+      "addressCountry": "GT"
+    },
+    "sameAs": [
+      "https://www.vitrea-sh.com",
+      "https://www.facebook.com/Vconnectionguatemala",
+      "https://www.instagram.com/v_connectiongt/"
+    ]
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": currentDomain,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${currentDomain}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
 
   return (
     <main className={styles.main}>
-      <header className={`${styles.hero} ${styles.sectionAnimation}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+
+      <header className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
             <h1 className={styles.heroTitle}>
-              <span className={styles.titleGradient}>Transforma</span> tu Hogar
+              <span className={styles.titleGradient}>{t('home', 'heroTitlePart1')}</span> {t('home', 'heroTitlePart2')}
               <br />
-              <span className={styles.titleHighlight}>en Inteligente</span>
+              <span className={styles.titleHighlight}>{t('home', 'heroTitlePart3')}</span>
             </h1>
             <Paragraph className={styles.heroSubtitle}>
-              Controla tu casa desde cualquier lugar con tecnología de vanguardia
+              {t('home', 'heroSubtitle')}
             </Paragraph>
             <div className={styles.buttonGroup}>
               <Button
                 href="#servicios"
                 className={styles.ctaButton}
-                aria-label="Explora nuestros servicios"
+                ariaLabel={t('home', 'exploreServicesAriaLabel')}
               >
-                Descubre cómo
+                {t('home', 'discoverHowButton')}
                 <span className={styles.buttonArrow}>→</span>
               </Button>
               <Button
@@ -185,7 +264,7 @@ export default function HomePage() {
                 variant="outline"
                 className={styles.secondaryButton}
               >
-                Agenda demostración
+                {t('common', 'scheduleDemoButton')}
               </Button>
             </div>
           </div>
@@ -193,8 +272,8 @@ export default function HomePage() {
         <div className={styles.heroImageWrapper}>
           <div className={styles.heroImageContainer}>
             <ImageComponent
-              src={heroImagePath} // NOW A STRING PATH
-              alt="Sistema de automatización inteligente"
+              src={heroImagePath}
+              alt={t('home', 'heroImageAlt')}
               fill
               priority
               sizes="(max-width: 768px) 100vw, 60vw"
@@ -205,53 +284,58 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section id="servicios" className={`${styles.services} ${styles.sectionAnimation}`}>
+      <section id="servicios" className={styles.services}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionBadge}>Nuestros servicios</span>
+          <span className={styles.sectionBadge}>{t('home', 'servicesBadge')}</span>
           <SectionTitle
-            title="Soluciones inteligentes para cada espacio"
+            title={t('home', 'servicesSectionTitle')}
             level={2}
             className={styles.sectionTitle}
           />
         </div>
         <div className={styles.servicesGrid}>
-          {/* --- Aquí usamos el map para renderizar las ServiceCard --- */}
           {servicesData.map((service) => (
             <ServiceCard
-              key={service.title} // Siempre usa una key única cuando uses map
-              {...service} // Pasa todas las propiedades del objeto 'service' al componente ServiceCard
+              key={service.titleKey}
+              title={t('home', service.titleKey)}
+              // CAMBIO AQUÍ: Traducimos la descripción
+              description={t('home', service.descriptionKey)} 
+              imageUrl={service.imageUrl}
+              imageAlt={t('home', service.imageAltKey)}
+              buttonText={t('common', service.buttonTextKey)} 
+              buttonLink={service.buttonLink}
             />
           ))}
         </div>
       </section>
 
-      <section className={`${styles.about} ${styles.sectionAnimation}`}>
+      <section className={styles.about}>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
             <SectionTitle
-              title="¿Cómo trabajamos?"
+              title={t('home', 'aboutSectionTitle')}
               level={2}
               className={styles.sectionTitle}
             />
             <ul className={styles.featuresList}>
               <li className={styles.featureItem}>
                 <span className={styles.featureIcon}>📐</span>
-                Diseñamos: Creamos tus proyectos en base a tus gustos y necesidades integrando un ambiente elegante con un ambiente fresco y tecnológico.
+                {t('home', 'designFeature')}
               </li>
               <li className={styles.featureItem}>
                 <span className={styles.featureIcon}>💡</span>
-                Asesoramos: Te brindamos asesoría técnica para poder tomar la mejor elección y cumplir cada una de tus necesidades durante el desarrollo de la obra.
+                {t('home', 'adviseFeature')}
               </li>
               <li className={styles.featureItem}>
                 <span className={styles.featureIcon}>🛠️</span>
-                Instalamos: Realizamos la instalación y configuración de tu equipo, te entregamos memoria técnica y garantía de 2 años, además de garantizarte un buen servicio post-venta.
+                {t('home', 'installFeature')}
               </li>
             </ul>
           </div>
           <div className={styles.aboutImage}>
             <ImageComponent
-              src={controladorDomoticaPath} // NOW A STRING PATH
-              alt="Sistema de control inteligente"
+              src={controladorDomoticaPath}
+              alt={t('home', 'aboutImageAlt')}
               fill
               className={styles.aboutImage}
             />
@@ -259,22 +343,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={`${styles.partners} ${styles.sectionAnimation}`}>
+      <section className={styles.partners}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionBadge}>Nuestros aliados</span>
+          <span className={styles.sectionBadge}>{t('home', 'partnersBadge')}</span>
           <SectionTitle
-            title="Trabajamos con las mejores marcas"
+            title={t('home', 'partnersSectionTitle')}
             level={2}
             className={styles.sectionTitle}
           />
         </div>
         <div className={styles.partnersGrid}>
-          {/* Aquí mapeamos el array de partners para mostrar los logos */}
           {partnersData.map((partner, index) => (
             <PartnerLogo
-              key={index} // Usa el index como key si no hay un id único para los partners
+              key={index} 
               imageUrl={partner.imageUrl}
-              alt={partner.alt}
+              alt={t('home', partner.altKey)}
               className={styles.partnerLogo}
             />
           ))}

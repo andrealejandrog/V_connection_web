@@ -1,0 +1,17 @@
+{
+  "title": "Send Us a Message",
+  "subtitle": "Fill out the form and we will contact you shortly.",
+  "firstNameLabel": "First Name",
+  "lastNameLabel": "Last Name",
+  "phoneLabel": "Phone",
+  "emailLabel": "Email",
+  "companyLabel": "Company (Optional)",
+  "commentsLabel": "Comments",
+  "submitButton": "Send Message",
+  "submittingButton": "Sending...",
+  "submitSuccessMessage": "Message sent successfully! We will contact you soon.",
+  "requestDistributorCodeButton": "Request Distributor Code",
+  "callUsPopupTitle": "Call Us",
+  "callUsPopupText": "To request your distributor code or for any inquiries, you can contact us directly:",
+  "callUsPopupDisclaimer": "Hours of operation: Monday to Friday, 9:00 AM - 5:00 PM (Guatemala time)."
+}

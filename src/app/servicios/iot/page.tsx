@@ -4,18 +4,21 @@
 import React, { useState } from 'react';
 import styles from './IoT.module.css';
 import Image from 'next/image';
+import { useLanguage } from '@/app/contexts/LanguageContext'; // Importa el hook de idioma
 
 export default function IoTpage() {
+  const { t } = useLanguage(); // Obtiene la función t para traducir
+
   // TODAS LAS RUTAS DE IMAGENES AQUÍ DEBEN ESTAR EN MINÚSCULAS PARA COINCIDIR CON LOS ARCHIVOS RENOMBRADOS
   const galleryImages = [
-    { src: `/images/iot/iot8.jpg`, alt: "Sistema de automatización residencial" },
-    { src: `/images/iot/iot2.jpg`, alt: "Control de iluminación inteligente" },
-    { src: `/images/iot/iot3.jpg`, alt: "Integración de seguridad IoT" },
-    { src: `/images/iot/iot4.jpg`, alt: "Sala de control centralizada" },
-    { src: `/images/iot/iot5.jpg`, alt: "Automatización de climatización" },
-    { src: `/images/iot/iot6.jpg`, alt: "Sistema de riego inteligente" },
-    { src: `/images/iot/iot7.jpg`, alt: "Sistema de riego inteligente" },
-    { src: `/images/iot/iot1.jpg`, alt: "Sistema de riego inteligente" }
+    { src: `/images/iot/iot8.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot2.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot3.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot4.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot5.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot6.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot7.webp`, alt: t('iot', 'imageAlt') },
+    { src: `/images/iot/iot1.webp`, alt: t('iot', 'imageAlt') }
   ];
 
   // Estado para controlar el modal
@@ -50,13 +53,12 @@ export default function IoTpage() {
     <div className={styles.iotContainer}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <h1 className={styles.heroTitle}>Internet de las cosas</h1>
+        <h1 className={styles.heroTitle}>{t('iot', 'heroTitle')}</h1>
         <p className={styles.heroText}>
-          Vive la experiencia de automatizar tu residencia u oficina.<br />
-          Optimiza las funciones e interacción con tus equipos.
+          {t('iot', 'heroText')}
         </p>
         <a href="#automation" className={styles.ctaButton}>
-          VER MÁS
+          {t('iot', 'ctaButton')}
         </a>
       </section>
 
@@ -68,48 +70,23 @@ export default function IoTpage() {
               <path d="M14.5,0h-5A5.506,5.506,0,0,0,4,5.5v13A5.506,5.506,0,0,0,9.5,24h5A5.506,5.506,0,0,0,20,18.5V5.5A5.506,5.506,0,0,0,14.5,0Zm-5,3h5A2.5,2.5,0,0,1,17,5.5V18H7V5.5A2.5,2.5,0,0,1,9.5,3ZM12,22h0a1,1,0,0,1-1-1h0a1,1,0,0,1,1-1h0a1,1,0,0,1,1,1h0A1,1,0,0,1,12,22Z"></path>
             </svg>
           </div>
-          <h4 className={styles.featureTitle}>Somos tu mejor opción</h4>
-          <p className={styles.featureSubtitle}>Automatización</p>
+          <h4 className={styles.featureTitle}>{t('iot', 'featureTitle')}</h4>
+          <p className={styles.featureSubtitle}>{t('iot', 'featureSubtitle')}</p>
           <p className={styles.featureText}>
-            VITREA es un protocolo abierto que permite integrarse e interactuar con diferentes equipos de
-            diferentes marcas, por lo que automatizar tu residencia u oficina se vuelve algo que sueñas.
-            Te imaginas programar escenarios dependiendo de la actividad que quieras realizar.
-            Tu imaginación es el límite.
+            {t('iot', 'featureText')}
           </p>
         </div>
 
         {/* Scenarios Section */}
         <div className={styles.scenariosSection}>
-          <h2 className={styles.sectionTitle}>Escenarios de Automatización</h2>
+          <h2 className={styles.sectionTitle}>{t('iot', 'scenariosTitle')}</h2>
 
           <div className={styles.scenariosGrid}>
             <div className={styles.scenarioCard}>
               <div className={styles.scenarioImage}>
                 <Image
-                  // Asegúrate que esta ruta coincida exactamente con el archivo renombrado en minúsculas
-                  src={`/images/sistema-de-riego-automatico-300x150.png`}
-                  alt="Jardín con luces automáticas"
-                  width={600}
-                  height={400}
-                  className={styles.image}
-                  unoptimized // Mantener para explícitud, aunque next.config.js ya lo maneja
-                />
-              </div>
-              <div className={styles.scenarioContent}>
-                <h3 className={styles.scenarioTitle}>Sistema de riego en verano</h3>
-                <p className={styles.scenarioText}>
-                  Programa que en distintas estaciones del año tu sistema de riego se active a ciertos horarios y días,
-                  sin necesidad de interacción manual.
-                </p>
-              </div>
-            </div>
-
-            <div className={styles.scenarioCard}>
-              <div className={styles.scenarioImage}>
-                <Image
-                  // Asegúrate que esta ruta coincida exactamente con el archivo renombrado en minúsculas
-                  src={`/images/audio-lujoso-casa-2-300x202.jpg`}
-                  alt="Sala de cine con luces tenues"
+                  src={`/images/iot/iot.jpg`}
+                  alt={t('iot', 'imageAlt')}
                   width={600}
                   height={400}
                   className={styles.image}
@@ -117,10 +94,9 @@ export default function IoTpage() {
                 />
               </div>
               <div className={styles.scenarioContent}>
-                <h3 className={styles.scenarioTitle}>Escenario de película</h3>
+                <h3 className={styles.scenarioTitle}>{t('iot', 'scenario1Title')}</h3>
                 <p className={styles.scenarioText}>
-                  Luces al 50%, música ambiental, climatización perfecta. Al iniciar la película:
-                  luces se atenúan, música se apaga, sonido de cine se activa y clima se ajusta.
+                  {t('iot', 'scenario1Text')}
                 </p>
               </div>
             </div>
@@ -128,9 +104,8 @@ export default function IoTpage() {
             <div className={styles.scenarioCard}>
               <div className={styles.scenarioImage}>
                 <Image
-                  // Asegúrate que esta ruta coincida exactamente con el archivo renombrado en minúsculas
-                  src={`/images/luces-de-jardin-300x200.jpg`}
-                  alt="Sistema de riego automático"
+                  src={`/images/iot/iot33.jpg`}
+                  alt={t('iot', 'imageAlt')}
                   width={600}
                   height={400}
                   className={styles.image}
@@ -138,10 +113,28 @@ export default function IoTpage() {
                 />
               </div>
               <div className={styles.scenarioContent}>
-                <h3 className={styles.scenarioTitle}>Escenario nocturno</h3>
+                <h3 className={styles.scenarioTitle}>{t('iot', 'scenario2Title')}</h3>
                 <p className={styles.scenarioText}>
-                  Camino iluminado suavemente hasta la cocina cuando detecta movimiento nocturno,
-                  sin molestar a otros dormitorios.
+                  {t('iot', 'scenario2Text')}
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.scenarioCard}>
+              <div className={styles.scenarioImage}>
+                <Image
+                  src={`/images/iot/iot44.jpg`}
+                  alt={t('iot', 'imageAlt')}
+                  width={600}
+                  height={400}
+                  className={styles.image}
+                  unoptimized
+                />
+              </div>
+              <div className={styles.scenarioContent}>
+                <h3 className={styles.scenarioTitle}>{t('iot', 'scenario3Title')}</h3>
+                <p className={styles.scenarioText}>
+                  {t('iot', 'scenario3Text')}
                 </p>
               </div>
             </div>
@@ -150,13 +143,13 @@ export default function IoTpage() {
 
         {/* Galería de Portada */}
         <div className={styles.gallerySection}>
-          <h2 className={styles.sectionTitle}>Nuestros Proyectos</h2>
-          <p className={styles.gallerySubtitle}>Implementaciones reales con tecnología IoT</p>
+          <h2 className={styles.sectionTitle}>{t('iot', 'galleryTitle')}</h2>
+          <p className={styles.gallerySubtitle}>{t('iot', 'gallerySubtitle')}</p>
 
           <div className={styles.coverGalleryContainer} onClick={() => openModal(0)}>
             <div className={styles.coverImageWrapper}>
               <Image
-                src={galleryImages[0].src} // Ahora debe cargar iot8.jpg (minúsculas)
+                src={galleryImages[0].src}
                 alt={galleryImages[0].alt}
                 width={800}
                 height={500}
@@ -172,8 +165,8 @@ export default function IoTpage() {
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                   </svg>
                 </div>
-                <div className={styles.overlayText}>Ver galería completa</div>
-                <div className={styles.overlayHint}>Click para explorar nuestros proyectos</div>
+                <div className={styles.overlayText}>{t('iot', 'overlayText')}</div>
+                <div className={styles.overlayHint}>{t('iot', 'overlayHint')}</div>
               </div>
             </div>
           </div>
@@ -181,14 +174,11 @@ export default function IoTpage() {
 
         {/* Demo Video Section */}
         <div className={styles.demoSection}>
-          <h2 className={styles.demoTitle}>Vea cómo funciona</h2>
+          <h2 className={styles.demoTitle}>{t('iot', 'demoTitle')}</h2>
           <div className={styles.videoContainer}>
             <iframe
-              // Ojo: Si este video de YouTube no funciona, verifica la URL exacta.
-              // YouTube usualmente requiere una URL específica como:
-              // https://www.youtube.com/embed/VIDEO_ID
               src="https://www.youtube.com/embed/iI5aF3ybmsQ?start=4"
-              title="Demo de automatización IoT"
+              title={t('iot', 'demoTitle')}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className={styles.video}
@@ -216,7 +206,7 @@ export default function IoTpage() {
 
             <div className={styles.imageInfo}>
               <h3 className={styles.modalImageTitle}>
-                {galleryImages[currentImageIndex].alt}
+                {t('iot', 'modalImageTitle')}
               </h3>
               <p className={styles.imageCounter}>
                 {currentImageIndex + 1} / {galleryImages.length}

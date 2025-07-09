@@ -1,0 +1,17 @@
+{
+  "title": "Envíanos un Mensaje",
+  "subtitle": "Completa el formulario y te contactaremos a la brevedad.",
+  "firstNameLabel": "Nombre",
+  "lastNameLabel": "Apellido",
+  "phoneLabel": "Teléfono",
+  "emailLabel": "Email",
+  "companyLabel": "Empresa (Opcional)",
+  "commentsLabel": "Comentarios",
+  "submitButton": "Enviar Mensaje",
+  "submittingButton": "Enviando...",
+  "submitSuccessMessage": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+  "requestDistributorCodeButton": "Solicitar código de distribuidor",
+  "callUsPopupTitle": "Llámanos",
+  "callUsPopupText": "Para solicitar tu código de distribuidor o para cualquier consulta, puedes contactarnos directamente:",
+  "callUsPopupDisclaimer": "Horario de atención: Lunes a Viernes, 9:00 AM - 5:00 PM (hora de Guatemala)."
+}

@@ -1,19 +1,40 @@
+// components/AudioProfesionalPage.js
+
 "use client";
 import React from 'react';
 import styles from './AudioProfesional.module.css';
-// import Image from 'next/image';
+import Image from 'next/image';
+import { useLanguage } from '@/app/contexts/LanguageContext'; // Importa el hook de idioma
 
 export default function AudioProfesionalPage() {
+  const { t } = useLanguage(); // Obtiene la función t para traducir
+
+  // Array con la información de las imágenes para las tarjetas
+  const cardImages = [
+    {
+      src: "/images/audios/adio4.jpg",
+      alt: t('audio', 'featureCard1ImageAlt'),
+    },
+    {
+      src: "/images/audios/audio1.jpg",
+      alt: t('audio', 'featureCard2ImageAlt'),
+    },
+    {
+      src: "/images/audios/audio2.jpg",
+      alt: t('audio', 'featureCard3ImageAlt'),
+    },
+  ];
+
   return (
     <div className={styles.audioContainer}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <h1 className={styles.heroTitle}>Audio Profesional y VoIP</h1>
+        <h1 className={styles.heroTitle}>{t('audio', 'heroTitle')}</h1>
         <p className={styles.heroText}>
-          Enriquecemos tus ambientes con sonido de la más alta fidelidad sin comprometer la estética de tu habitación u oficina.
+          {t('audio', 'heroText')}
         </p>
         <a href="#verMas" className={styles.ctaButton}>
-          VER MÁS
+          {t('audio', 'ctaButton')}
         </a>
       </section>
 
@@ -28,97 +49,73 @@ export default function AudioProfesionalPage() {
               <circle cx="12" cy="15" r="1"></circle>
             </svg>
           </div>
-          <h4 className={styles.featureTitle}>Alta fidelidad y comunicación efectiva</h4>
-          <p className={styles.featureSubtitle}>Audio Profesional y VoIP</p>
+          <h4 className={styles.featureTitle}>{t('audio', 'featureTitle')}</h4>
+          <p className={styles.featureSubtitle}>{t('audio', 'featureSubtitle')}</p>
           <p className={styles.featureText}>
-            ¿Te gusta la música y realmente quieres apreciarla?
+            {t('audio', 'featureText1')}
           </p>
           <p className={styles.featureText}>
-            Te presentamos soluciones ambientales y profesionales con manejo inalámbrico y con diferentes equipos para que vivas una experiencia única en tu casa, oficina, salas de reuniones o proyectos de eventos donde quieres la discreción de los equipos pero quieres potencia y fidelidad.
+            {t('audio', 'featureText2')}
           </p>
           <p className={styles.featureText}>
-            ¿Necesitas estar comunicado?
+            {t('audio', 'featureText3')}
           </p>
           <p className={styles.featureText}>
-            Tenemos soluciones de telefonía IP para que puedas estar comunicado en todo el mundo donde el costo que ocupas es únicamente tu internet, integramos equipos de video conferencias para que tus reuniones sean puntuales y eficientes sin la necesidad de tener que viajar de un lugar a otro.
+            {t('audio', 'featureText4')}
           </p>
         </div>
 
         {/* Features Grid */}
         <div className={styles.featuresGrid}>
+          {/* Tarjeta 1: Integración */}
           <div className={styles.featureCard}>
             <div className={styles.cardImage}>
-              {/* <Image 
-                src="https://v-connection.local/wp-content/uploads/elementor/thumbs/Audio-casa-lujoso-pqzj5979pen61olonnyr8v520yqtvt1t661iu5n01k.png"
-                alt="Audio casa lujoso"
-                width={400}
-                height={300}
+              <Image
+                src={cardImages[0].src}
+                alt={cardImages[0].alt}
+                fill
+                style={{ objectFit: 'cover' }}
                 className={styles.image}
-              /> */}
+              />
             </div>
-            <h6 className={styles.cardTitle}>Integración</h6>
+            <h6 className={styles.cardTitle}>{t('audio', 'featureCard1Title')}</h6>
             <p className={styles.cardText}>
-              Maneja el apagado y encendido de luces, música en reproducción y búsqueda de información en internet con el poder de tu voz y Amazon Alexa.
+              {t('audio', 'featureCard1Text')}
             </p>
-              <div className={styles.videoContainer}>
-              <iframe 
-                src="https://www.youtube.com/embed/NxZ1fOmOcNk?si=uuJSGvn7NZsb7L-S" 
-                title="Video de comunicación VoIP"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className={styles.video}
-              ></iframe>
-            </div>
           </div>
 
+          {/* Tarjeta 2: Alta Fidelidad */}
           <div className={styles.featureCard}>
             <div className={styles.cardImage}>
-              {/* <Image 
-                src="https://v-connection.local/wp-content/uploads/elementor/thumbs/audio-casa-lujoso-3-pqzjmgmwt874kplx6lpwe0tthvxpsccx7byi3i4k54.jpg"
-                alt="Audio casa lujoso"
-                width={400}
-                height={300}
+              <Image
+                src={cardImages[1].src}
+                alt={cardImages[1].alt}
+                fill
+                style={{ objectFit: 'cover' }}
                 className={styles.image}
-              /> */}
+              />
             </div>
-            <h6 className={styles.cardTitle}>Alta Fidelidad</h6>
+            <h6 className={styles.cardTitle}>{t('audio', 'featureCard2Title')}</h6>
             <p className={styles.cardText}>
-              Trabajamos con exclusivas marcas para que puedas disfrutar de una calidad de audio inigualable, algunas de ellas son Polk y Amazon Alexa.
+              {t('audio', 'featureCard2Text')}
             </p>
-            <div className={styles.videoContainer}>
-              <iframe 
-                src="https://www.youtube.com/embed/0W0p78VA3o4?si=1ImBE_-I7UKwHa20" 
-                title="Video de comunicación VoIP"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className={styles.video}
-              ></iframe>
-            </div>
           </div>
 
+          {/* Tarjeta 3: Comunicación constante */}
           <div className={styles.featureCard}>
             <div className={styles.cardImage}>
-              {/* <Image 
-                src="https://v-connection.local/wp-content/uploads/elementor/thumbs/alexa-pumv1ntbypn6ij7fgyfplvjckcw59jqrrrdxirva5c.jpg"
-                alt="Amazon Alexa"
-                width={400}
-                height={300}
+              <Image
+                src={cardImages[2].src}
+                alt={cardImages[2].alt}
+                fill
+                style={{ objectFit: 'cover' }}
                 className={styles.image}
-              /> */}
+              />
             </div>
-            <h6 className={styles.cardTitle}>Comunicación constante</h6>
+            <h6 className={styles.cardTitle}>{t('audio', 'featureCard3Title')}</h6>
             <p className={styles.cardText}>
-              Te proporcionamos ambientes ideales para que tus videollamadas importantes se realicen de la manera más cómoda y eficiente.
+              {t('audio', 'featureCard3Text')}
             </p>
-            <div className={styles.videoContainer}>
-              <iframe 
-                src="https://www.youtube.com/embed/qSCAlYDLjR8" 
-                title="Video de comunicación VoIP"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className={styles.video}
-              ></iframe>
-            </div>
           </div>
         </div>
       </section>

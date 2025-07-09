@@ -1,11 +1,22 @@
 // components/ContactForm/index.tsx
-'use client'; // This is a client component
+'use client';
 
 import React, { useState } from 'react';
-import styles from './ContactForm.module.css'; // Asegúrate que la ruta sea correcta a TU CSS de este componente
-import { FiPhone } from 'react-icons/fi'; // Importa el icono del teléfono
+import styles from './ContactForm.module.css';
+import { FiPhone } from 'react-icons/fi';
+import { useLanguage } from '@/app/contexts/LanguageContext';
+
+import { functions, httpsCallable } from '../../firebaseConfig';
+
+// Define la interfaz para la respuesta esperada de la Cloud Function
+interface CloudFunctionResponse {
+  success: boolean;
+  message: string;
+}
 
 export default function ContactForm() {
+  const { t } = useLanguage();
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,7 +28,7 @@ export default function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
-  const [showCallPopup, setShowCallPopup] = useState(false); // Estado para controlar la visibilidad del popup
+  const [showCallPopup, setShowCallPopup] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -32,39 +43,58 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setSubmitMessage('');
 
-    // --- Aquí iría la lógica para enviar el formulario a tu API ---
-    // Por ahora, simulamos un envío exitoso con un retraso:
-    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simula retraso de red
-    setSubmitMessage('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
-    setFormData({ // Limpia el formulario después del envío
-      firstName: '',
-      lastName: '',
-      phone: '',
-      email: '',
-      company: '',
-      comments: '',
-    });
-    setIsSubmitting(false);
+    try {
+      const submitForm = httpsCallable<typeof formData, CloudFunctionResponse>(functions, 'submitContactForm');
+
+      const result = await submitForm(formData);
+
+      if (result.data && result.data.success) {
+        setSubmitMessage(t('contactForm', 'submitSuccessMessage'));
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          company: '',
+          comments: '',
+        });
+      } else {
+        const errorMessage = result.data?.message || t('contactForm', 'submitErrorMessage');
+        setSubmitMessage(errorMessage);
+        console.error('Cloud Function reported an issue:', result.data?.message);
+      }
+    } catch (error: unknown) { // CAMBIO AQUÍ: Usar 'unknown' en lugar de 'any'
+      console.error('Error submitting form:', error);
+      
+      let errorMessage = t('contactForm', 'submitGenericError'); // Mensaje por defecto
+
+      // Intenta extraer un mensaje si 'error' tiene una propiedad 'message'
+      if (typeof error === 'object' && error !== null && 'message' in error) {
+        errorMessage = (error as { message: string }).message; // Castea para acceder a 'message'
+      }
+      
+      setSubmitMessage(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  // Función para abrir el popup (al hacer clic en "Solicitar código de distribuidor")
   const handleRequestDistributorCode = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); // Evita que el enlace # salte a la parte superior de la página
+    e.preventDefault();
     setShowCallPopup(true);
   };
 
-  // Función para cerrar el popup
   const handleClosePopup = () => {
     setShowCallPopup(false);
   };
 
   return (
     <div className={styles.formContainer}>
-      <h3 className={styles.formTitle}>Envíanos un Mensaje</h3>
-      <p className={styles.formSubtitle}>Completa el formulario y te contactaremos a la brevedad.</p>
+      <h3 className={styles.formTitle}>{t('contactForm', 'title')}</h3>
+      <p className={styles.formSubtitle}>{t('contactForm', 'subtitle')}</p>
       <form onSubmit={handleSubmit} className={styles.contactForm}>
         <div className={styles.formGroup}>
-          <label htmlFor="firstName" className={styles.label}>Nombre</label>
+          <label htmlFor="firstName" className={styles.label}>{t('contactForm', 'firstNameLabel')}</label>
           <input
             type="text"
             id="firstName"
@@ -77,7 +107,7 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="lastName" className={styles.label}>Apellido</label>
+          <label htmlFor="lastName" className={styles.label}>{t('contactForm', 'lastNameLabel')}</label>
           <input
             type="text"
             id="lastName"
@@ -90,7 +120,7 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="phone" className={styles.label}>Teléfono</label>
+          <label htmlFor="phone" className={styles.label}>{t('contactForm', 'phoneLabel')}</label>
           <input
             type="tel"
             id="phone"
@@ -103,7 +133,7 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="email" className={styles.label}>Email</label>
+          <label htmlFor="email" className={styles.label}>{t('contactForm', 'emailLabel')}</label>
           <input
             type="email"
             id="email"
@@ -116,7 +146,7 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="company" className={styles.label}>Empresa (Opcional)</label>
+          <label htmlFor="company" className={styles.label}>{t('contactForm', 'companyLabel')}</label>
           <input
             type="text"
             id="company"
@@ -128,7 +158,7 @@ export default function ContactForm() {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="comments" className={styles.label}>Comentarios</label>
+          <label htmlFor="comments" className={styles.label}>{t('contactForm', 'commentsLabel')}</label>
           <textarea
             id="comments"
             name="comments"
@@ -141,41 +171,37 @@ export default function ContactForm() {
         </div>
 
         <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
-          {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+          {isSubmitting ? t('contactForm', 'submittingButton') : t('contactForm', 'submitButton')}
         </button>
 
         {submitMessage && (
           <p className={styles.submitMessage}>{submitMessage}</p>
         )}
 
-        {/* --- AÑADIDO: BOTÓN "Solicitar código de distribuidor" que abre el popup --- */}
         <a href="#" className={styles.distributorButton} onClick={handleRequestDistributorCode}>
           <FiPhone className={styles.distributorIcon} />
-          Solicitar código de distribuidor
+          {t('contactForm', 'requestDistributorCodeButton')}
         </a>
-        {/* ---------------------------------------------------------------------------------- */}
       </form>
 
-      {/* --- AÑADIDO: Popup de Llamada --- */}
       {showCallPopup && (
         <div className={styles.callPopupOverlay}>
           <div className={styles.callPopup}>
-            <button className={styles.closePopupButton} onClick={handleClosePopup}>&times;</button>
-            <h4 className={styles.popupTitle}>Llámanos</h4>
+            <button className={styles.closePopupButton} onClick={handleClosePopup}>×</button>
+            <h4 className={styles.popupTitle}>{t('contactForm', 'callUsPopupTitle')}</h4>
             <p className={styles.popupText}>
-              Para solicitar tu código de distribuidor o para cualquier consulta, puedes contactarnos directamente:
+              {t('contactForm', 'callUsPopupText')}
             </p>
             <a href="tel:+50230588632" className={styles.callNowButton}>
               <FiPhone className={styles.callNowIcon} />
               +502 3058 8632
             </a>
             <p className={styles.popupDisclaimer}>
-                Horario de atención: Lunes a Viernes, 9:00 AM - 5:00 PM (hora de Guatemala).
+              {t('contactForm', 'callUsPopupDisclaimer')}
             </p>
           </div>
         </div>
       )}
-      {/* ----------------------------------------------------- */}
     </div>
   );
 }

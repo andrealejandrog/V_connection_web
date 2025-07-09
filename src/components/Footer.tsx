@@ -2,23 +2,24 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link'; // <--- ¡Importa Link de Next.js!
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Footer.module.css';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        {/* Sección de información */}
         <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>V-Connection S.A.</h4>
+          <h4 className={styles.sectionTitle}>{t('footer', 'companySectionTitle')}</h4>
           <p className={styles.companyInfo}>
-            Especialistas en automatización residencial e integración tecnológica
+            {t('footer', 'companyInfo')}
           </p>
           <div className={styles.certification}>
-            <span>Certified by </span>
-            {/* El texto "Vitrea Smart Home" sigue siendo un enlace */}
+            <span>{t('footer', 'certifiedBy')} </span>
             <a
               href="https://www.vitrea-sh.com"
               target="_blank"
@@ -26,15 +27,14 @@ const Footer = () => {
               className={styles.certificationLink}
             >
             </a>
-            {/* Aquí es donde envolvemos el logo de Vitrea con Link */}
             <Link
-              href="https://www.vitrea-sh.com" // <--- La URL a la que quieres que dirija el logo
-              target="_blank" // <--- Abre en una nueva pestaña (opcional)
-              rel="noopener noreferrer" // <--- Buena práctica para target="_blank"
+              href="https://www.vitrea-sh.com"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
-                src="/images/Vitrea-logo-blanco-02.png" // <--- Tu ruta de imagen
-                alt="Vitrea Smart Home Logo"
+                src="/images/Vitrea-logo-blanco-02.png"
+                alt={t('footer', 'vitreaLogoAlt')}
                 width={24}
                 height={24}
                 className={styles.vitreaLogo}
@@ -42,31 +42,19 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-{/*
-        Legal
-        <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>Legal</h4>
-          <ul className={styles.linkList}>
-            <li><Link href="/legal/terminos" className={styles.footerLink}>Términos y Condiciones</Link></li>
-            <li><Link href="/legal/privacidad" className={styles.footerLink}>Política de Privacidad</Link></li>
-            <li><Link href="/legal/cookies" className={styles.footerLink}>Política de Cookies</Link></li>
-          </ul>
-        </div> */}
 
-        {/* Contacto */}
         <div className={styles.footerSection}>
-          <h4 className={styles.sectionTitle}>Contacto</h4>
+          <h4 className={styles.sectionTitle}>{t('footer', 'contactSectionTitle')}</h4>
           <ul className={styles.contactInfo}>
-            <li>✉️ <a href="mailto:info@v-connection.com.gt" className={styles.footerLink}>info@v-connection.com.gt</a></li>
-            <li>📞 <a href="tel:+50222987512" className={styles.footerLink}>(502) 2298-7512</a></li>
-            <li>📍 Edificio Torino I , Zona 10, 19-70, 17 Avenida, Ciudad de Guatemala 01010, Guatemala</li>
+            <li>✉️ <a href="mailto:info@v-connection.com.gt" className={styles.footerLink}>{t('footer', 'emailAddress')}</a></li>
+            <li>📞 <a href="tel:+50222987512" className={styles.footerLink}>{t('footer', 'phoneNumber')}</a></li>
+            <li>📍 {t('footer', 'addressLine1')}</li>
           </ul>
         </div>
       </div>
 
-      {/* Derechos de autor */}
       <div className={styles.copyRight}>
-        <p>© {new Date().getFullYear()} V-Connection S.A. Todos los derechos reservados.</p>
+        <p>© {new Date().getFullYear()} {t('footer', 'copyrightText')}</p>
       </div>
     </footer>
   );

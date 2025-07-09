@@ -1,285 +1,383 @@
 /* Base Styles */
 .smartFilmContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Arial', sans-serif;
-  color: #0B1C3D; /* Dark blue for primary text */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    color: #0B1C3D; /* Dark blue for primary text */
 }
 
 /* Hero Section */
 .heroSection {
-  text-align: center;
-  padding: 5rem 2rem;
-  margin-bottom: 3rem;
-  background: linear-gradient(135deg, #0B1C3D 0%, #0d2a5c 100%); /* Dark blue gradient */
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(11, 28, 61, 0.3); /* Shadow with dark blue */
+    text-align: center;
+    padding: 5rem 2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #0B1C3D 0%, #0d2a5c 100%); /* Dark blue gradient */
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(11, 28, 61, 0.3); /* Shadow with dark blue */
 }
 
 .heroSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Subtle gold pattern for texture */
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgxOTksIDE2MiwgNzAsIDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI3BhdHRlcm4pIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+PC9zdmc+');
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Subtle gold pattern for texture */
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgxOTksIDE2MiwgNzAsIDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI3BhdHRlcm4pIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+PC9zdmc+');
+    z-index: 0; /* Asegura que el patrón esté detrás del texto */
+    opacity: 0.8; /* Ajusta la opacidad si el patrón es muy fuerte */
+}
+
+.heroTitle,
+.heroText,
+.ctaButton {
+    position: relative; /* Asegura que el texto y botón estén sobre el patrón */
+    z-index: 1;
 }
 
 .heroTitle {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #FFFFFF; /* White for hero title */
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for readability */
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF; /* White for hero title */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for readability */
 }
 
 .heroText {
-  font-size: 1.25rem;
-  max-width: 800px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
-  position: relative;
-  z-index: 1;
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
 }
 
 .ctaButton {
-  display: inline-block;
-  padding: 0.9rem 2.2rem;
-  background: linear-gradient(90deg, #C7A246, #d8b863); /* Gold gradient */
-  color: #0B1C3D; /* Dark blue for button text */
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 700; /* Bolder text for emphasis */
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(199, 162, 70, 0.4); /* Gold shadow */
-  position: relative;
-  z-index: 1;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.5px; /* Subtle letter spacing */
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: linear-gradient(90deg, #C7A246, #d8b863); /* Gold gradient */
+    color: #0B1C3D; /* Dark blue for button text */
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700; /* Bolder text for emphasis */
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(199, 162, 70, 0.4); /* Gold shadow */
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px; /* Subtle letter spacing */
 }
 
 .ctaButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(199, 162, 70, 0.5);
-  background: linear-gradient(90deg, #d8b863, #C7A246); /* Reverse gradient on hover */
-  color: #0B1C3D; /* Ensure text color remains dark blue */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(199, 162, 70, 0.5);
+    background: linear-gradient(90deg, #d8b863, #C7A246); /* Reverse gradient on hover */
+    color: #0B1C3D; /* Ensure text color remains dark blue */
 }
 
 /* Content Section */
 .contentSection {
-  padding: 2rem 0;
+    padding: 2rem 0;
 }
 
 .feature {
-  margin-bottom: 5rem;
-  text-align: center;
+    margin-bottom: 5rem;
+    text-align: center;
 }
 
 .featureIcon {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .featureIcon svg {
-  width: 70px;
-  height: 70px;
-  fill: #C7A246; /* Gold for feature icons */
+    width: 70px;
+    height: 70px;
+    fill: #C7A246; /* Gold for feature icons */
 }
 
 .featureTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #0B1C3D; /* Dark blue for feature titles */
-  position: relative;
-  display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0B1C3D; /* Dark blue for feature titles */
+    position: relative;
+    display: inline-block;
 }
 
 .featureTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: #C7A246; /* Gold for decorative line */
-  border-radius: 2px;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #C7A246; /* Gold for decorative line */
+    border-radius: 2px;
 }
 
 .featureSubtitle {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #C7A246; /* Gold for feature subtitles */
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  background: rgba(199, 162, 70, 0.1); /* Subtle gold background with transparency */
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(199, 162, 70, 0.3); /* Subtle gold border */
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #C7A246; /* Gold for feature subtitles */
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: rgba(199, 162, 70, 0.1); /* Subtle gold background with transparency */
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(199, 162, 70, 0.3); /* Subtle gold border */
 }
 
 .featureText {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: 0 auto 1rem;
-  color: #0B1C3D; /* Dark blue for feature text */
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 1rem;
+    color: #0B1C3D; /* Dark blue for feature text */
 }
 
 /* Features Grid */
 .featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
-  margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0;
 }
 
 .featureCard {
-  background: white; /* White for card background */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(11, 28, 61, 0.08); /* Shadow with dark blue */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 1px solid rgba(11, 28, 61, 0.05); /* Very subtle border */
+    background: white; /* White for card background */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(11, 28, 61, 0.08); /* Shadow with dark blue */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(11, 28, 61, 0.05); /* Very subtle border */
+    display: flex; /* Añadido para usar flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 .featureCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(11, 28, 61, 0.12); /* More pronounced shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(11, 28, 61, 0.12); /* More pronounced shadow on hover */
 }
 
 .cardImage {
-  position: relative;
-  height: 250px; /* Set a fixed height for images */
-  overflow: hidden;
+    position: relative;
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: 0px; /* ¡IMPORTANTE! Define una altura fija para el contenedor de la imagen */
+    overflow: hidden;
+    border-bottom: 1px solid rgba(11, 28, 61, 0.05); /* Separador sutil entre imagen y contenido */
 }
 
+/* Para el componente Next.js Image cuando se usa 'fill' */
+/* No necesitas width/height aquí, solo object-fit y la transición */
 .image {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease;
-  display: block; /* Ensure it behaves like a block element */
-}
-
-/* Next.js Image specific override (if used with layout="fill") */
-.fillImage {
-  object-fit: cover !important;
-  object-position: center;
+    object-fit: cover; /* La imagen cubrirá el área, recortando si es necesario */
+    object-position: center; /* Centra la imagen */
+    transition: transform 0.5s ease;
+    display: block; /* Asegura que no haya espacio extra */
 }
 
 .featureCard:hover .image {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .cardContent {
-  padding: 2rem;
+    padding: 2rem; /* Aumenta el padding para separar el texto de los bordes */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center; /* Centra el contenido dentro de cardContent */
+    text-align: center; /* Centra el texto dentro del cardContent */
 }
 
 .cardTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  color: #0B1C3D; /* Dark blue for card titles */
-  position: relative;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: #0B1C3D; /* Dark blue for card titles */
+    position: relative;
+    text-align: center; /* Centra el título */
 }
 
 .cardTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: #C7A246; /* Gold for decorative line */
-  border-radius: 2px;
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%; /* Centra la línea */
+    transform: translateX(-50%); /* Ajusta para el centrado */
+    width: 40px;
+    height: 3px;
+    background: #C7A246; /* Gold for decorative line */
+    border-radius: 2px;
 }
 
 .cardText {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #0B1C3D; /* Dark blue for card text */
-  margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #0B1C3D; /* Dark blue for card text */
+    margin-bottom: 1rem;
+    text-align: center; /* ¡CLAVE! Centra el texto de los párrafos */
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
 }
 
 /* Demo Section */
 .demoSection {
-  margin: 6rem 0 4rem;
-  text-align: center;
+    margin: 6rem 0 4rem;
+    text-align: center;
 }
 
 .demoTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #0B1C3D; /* Dark blue for demo section title */
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #0B1C3D; /* Dark blue for demo section title */
 }
 
 .demoSubtitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #C7A246; /* Gold for demo section subtitle */
-  margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #C7A246; /* Gold for demo section subtitle */
+    margin-bottom: 2.5rem;
 }
 
 .videoContainer {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(11, 28, 61, 0.15); /* Shadow with dark blue */
-  border: 1px solid rgba(11, 28, 61, 0.1); /* Subtle border */
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(11, 28, 61, 0.15); /* Shadow with dark blue */
+    border: 1px solid rgba(11, 28, 61, 0.1); /* Subtle border */
 }
 
 .video {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* New section for provider/more information */
+.providerSection {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem; /* Espacio superior para separarla de la sección anterior */
+    background-color: #F8F9FA; /* Fondo similar al hero para consistencia */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(11, 28, 61, 0.05); /* Sombra sutil */
+    border: 1px solid rgba(11, 28, 61, 0.03); /* Borde muy ligero */
+}
+
+.providerTitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0B1C3D;
+}
+
+.providerText {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    color: rgba(11, 28, 61, 0.85);
+}
+
+.providerLink {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: #C7A246; /* Dorado */
+    color: #FFFFFF; /* Texto blanco para contraste */
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 10px rgba(199, 162, 70, 0.3);
+}
+
+.providerLink:hover {
+    background-color: #d8b863; /* Un dorado un poco más claro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(199, 162, 70, 0.4);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .heroSection {
-    padding: 4rem 1.5rem;
-  }
-  
-  .heroTitle {
-    font-size: 2.2rem;
-  }
-  
-  .heroText {
-    font-size: 1.1rem;
-  }
-  
-  .featuresGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .featureTitle {
-    font-size: 1.8rem;
-  }
-  
-  .featureText {
-    font-size: 1rem;
-  }
-  
-  .cardImage {
-    height: 200px; /* Adjust height for smaller screens */
-  }
-  
-  .demoTitle {
-    font-size: 1.8rem;
-  }
+    .heroSection {
+        padding: 4rem 1.5rem;
+    }
+
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+
+    .heroText {
+        font-size: 1.1rem;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .featureTitle {
+        font-size: 1.8rem;
+    }
+
+    .featureText {
+        font-size: 1rem;
+    }
+
+    .cardImage {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .cardTitle {
+        font-size: 1.2rem; /* Ajuste para títulos de tarjeta */
+    }
+
+    .cardText {
+        font-size: 0.95rem; /* Ajuste para texto de tarjeta */
+    }
+
+    .demoTitle {
+        font-size: 1.8rem;
+    }
+
+    .cardContent {
+        padding: 1.5rem; /* Menos padding en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .heroText {
+        font-size: 1rem;
+    }
+
+    .cardImage {
+        height: 150px; /* Altura aún menor para pantallas muy pequeñas */
+    }
+
+    .cardContent {
+        padding: 1rem; /* Menos padding aún */
+    }
+
+    .providerSection {
+        padding: 2rem 1rem;
+    }
+
+    .providerTitle {
+        font-size: 1.4rem;
+    }
+
+    .providerText {
+        font-size: 1rem;
+    }
 }

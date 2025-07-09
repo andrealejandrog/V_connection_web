@@ -1,181 +1,224 @@
 /* Estilos base */
 .audioContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Arial', sans-serif;
-  color: #0B1C3D; /* Azul oscuro para texto principal */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    color: #0B1C3D; /* Azul oscuro para texto principal */
 }
 
 /* Hero Section */
 .heroSection {
-  text-align: center;
-  padding: 4rem 2rem;
-  margin-bottom: 3rem;
-  background-color: #F8F9FA; /* Un blanco muy sutil para el fondo de la sección hero */
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(11, 28, 61, 0.08); /* Sombra suave con el azul oscuro */
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    background-color: #F8F9FA; /* Un blanco muy sutil para el fondo de la sección hero */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(11, 28, 61, 0.08); /* Sombra suave con el azul oscuro */
 }
 
 .heroTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #0B1C3D; /* Azul oscuro para el título principal */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #0B1C3D; /* Azul oscuro para el título principal */
 }
 
 .heroText {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-  color: rgba(11, 28, 61, 0.9); /* Azul oscuro con ligera transparencia para el texto */
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    color: rgba(11, 28, 61, 0.9); /* Azul oscuro con ligera transparencia para el texto */
 }
 
 .ctaButton {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background: linear-gradient(90deg, #C7A246, #d8b863); /* Degradado dorado */
-  color: #0B1C3D; /* Azul oscuro para el texto del botón */
-  text-decoration: none;
-  border-radius: 50px; /* Bordes más redondeados para el botón */
-  font-weight: 700; /* Más énfasis en el texto del botón */
-  transition: all 0.3s ease; /* Transición más completa */
-  box-shadow: 0 4px 15px rgba(199, 162, 70, 0.4); /* Sombra dorada */
-  border: none; /* Eliminar borde por defecto */
-  cursor: pointer;
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(90deg, #C7A246, #d8b863); /* Degradado dorado */
+    color: #0B1C3D; /* Azul oscuro para el texto del botón */
+    text-decoration: none;
+    border-radius: 50px; /* Bordes más redondeados para el botón */
+    font-weight: 700; /* Más énfasis en el texto del botón */
+    transition: all 0.3s ease; /* Transición más completa */
+    box-shadow: 0 4px 15px rgba(199, 162, 70, 0.4); /* Sombra dorada */
+    border: none; /* Eliminar borde por defecto */
+    cursor: pointer;
 }
 
 .ctaButton:hover {
-  transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
-  box-shadow: 0 6px 20px rgba(199, 162, 70, 0.5); /* Sombra más pronunciada */
-  background: linear-gradient(90deg, #d8b863, #C7A246); /* Invertir degradado al pasar el mouse */
-  color: #0B1C3D; /* Asegurar que el color del texto se mantenga */
+    transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(199, 162, 70, 0.5); /* Sombra más pronunciada */
+    background: linear-gradient(90deg, #d8b863, #C7A246); /* Invertir degradado al pasar el mouse */
+    color: #0B1C3D; /* Asegurar que el color del texto se mantenga */
 }
 
 /* Content Section */
 .contentSection {
-  padding: 2rem 0;
+    padding: 2rem 0;
 }
 
 .feature {
-  margin-bottom: 4rem;
-  text-align: center;
+    margin-bottom: 4rem;
+    text-align: center;
 }
 
 .featureIcon svg {
-  width: 60px;
-  height: 60px;
-  fill: #C7A246; /* Dorado para los iconos */
-  margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    fill: #C7A246; /* Dorado para los iconos */
+    margin-bottom: 1.5rem;
 }
 
 .featureTitle {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #0B1C3D; /* Azul oscuro para los títulos de característica */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0B1C3D; /* Azul oscuro para los títulos de característica */
 }
 
 .featureSubtitle {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #C7A246; /* Dorado para los subtítulos de característica */
-  margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #C7A246; /* Dorado para los subtítulos de característica */
+    margin-bottom: 1.5rem;
 }
 
 .featureText {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto 1rem;
-  color: rgba(11, 28, 61, 0.9); /* Azul oscuro con ligera transparencia para el texto de característica */
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    color: rgba(11, 28, 61, 0.9); /* Azul oscuro con transparencia para el texto de característica */
 }
 
 /* Features Grid */
 .featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .featureCard {
-  background: #FFFFFF; /* Blanco para el fondo de las tarjetas de característica */
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 28, 61, 0.05); /* Sombra sutil con el azul oscuro */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(11, 28, 61, 0.05); /* Borde muy sutil */
+    background: #FFFFFF; /* Blanco para el fondo de las tarjetas de característica */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(11, 28, 61, 0.05); /* Sombra sutil con el azul oscuro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(11, 28, 61, 0.05); /* Borde muy sutil */
+    display: flex; /* Añadido para que el contenido se organice mejor verticalmente */
+    flex-direction: column; /* Contenido apilado verticalmente */
 }
 
 .featureCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.1); /* Sombra más pronunciada al pasar el mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(11, 28, 61, 0.1); /* Sombra más pronunciada al pasar el mouse */
 }
 
 .cardImage {
-  margin-bottom: 1.5rem;
-  border-radius: 6px;
-  overflow: hidden;
+    position: relative; /* ¡CLAVE! Necesario para que Next.js Image con 'fill' funcione */
+    width: 100%;
+    height: 200px; /* Define una altura para el contenedor de la imagen */
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde si usas 'cover' */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra ligera para la imagen dentro de la tarjeta */
 }
 
+/* La clase .image se aplicaría directamente al componente Next.js <Image>
+   Si usas 'fill' y 'object-fit' en el JSX, esta clase puede ser más simple
+   o incluso no ser necesaria para el tamaño. Podría ser para transiciones etc. */
 .image {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  transition: transform 0.3s ease;
+    /* Si usas fill y object-fit en el JSX, no necesitas width: 100%; height: auto; aquí. */
+    border-radius: 6px; /* Asegura que la imagen tenga los bordes redondeados */
+    transition: transform 0.3s ease; /* Transición para el efecto de zoom */
 }
 
 .featureCard:hover .image {
-  transform: scale(1.03);
+    transform: scale(1.05); /* Ligeramente más zoom al pasar el mouse sobre la tarjeta */
 }
 
 .cardTitle {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #0B1C3D; /* Azul oscuro para los títulos de las tarjetas */
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0B1C3D; /* Azul oscuro para los títulos de las tarjetas */
 }
 
 .cardText {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(11, 28, 61, 0.85); /* Azul oscuro con transparencia para el texto de las tarjetas */
-  margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(11, 28, 61, 0.85); /* Azul oscuro con transparencia para el texto de las tarjetas */
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible y empuje la imagen al fondo si hay más contenido */
 }
 
-/* Video Container */
+/* Si tenías un .videoContainer para los iframes/videos, ya no es necesario
+   si solo usas imágenes dentro de .cardImage.
+   Mantendremos las reglas para .video si por alguna razón sigues usándolos en otras secciones. */
+/* .videoContainer ya no es necesario si las imágenes están en .cardImage directamente */
+/* Sin embargo, si lo quieres usar como un contenedor general para imágenes con un ratio específico: */
+/*
 .videoContainer {
-  margin-top: 1.5rem;
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 6px; /* Para que el video también tenga los bordes redondeados */
-  box-shadow: 0 5px 20px rgba(11, 28, 61, 0.15); /* Sombra para el video */
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; // Aspect Ratio 16:9 (altura / ancho * 100)
+    height: 0;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px rgba(11, 28, 61, 0.15);
 }
-
 .video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    border: none; // Importante para iframes
 }
+*/
+
 
 /* Responsive */
 @media (max-width: 768px) {
-  .heroSection {
-    padding: 3rem 1rem;
-  }
-  
-  .heroTitle {
-    font-size: 2rem;
-  }
-  
-  .featureTitle {
-    font-size: 1.5rem;
-  }
+    .heroSection {
+        padding: 3rem 1rem;
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroText {
+        font-size: 1.1rem;
+    }
+
+    .featureTitle {
+        font-size: 1.5rem;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .cardImage {
+        height: 180px; /* Ajusta la altura para móviles si es necesario */
+    }
+}
+
+@media (max-width: 480px) {
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .heroText {
+        font-size: 1rem;
+    }
+
+    .cardImage {
+        height: 150px; /* Altura aún menor para pantallas muy pequeñas */
+    }
 }

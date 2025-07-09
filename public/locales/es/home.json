@@ -1,0 +1,89 @@
+{
+  "heroTitlePart1": "Transforma",
+  "heroTitlePart2": "tu Hogar",
+  "heroTitlePart3": "en Inteligente",
+  "heroSubtitle": "Controla tu casa desde cualquier lugar con tecnología de vanguardia",
+  "exploreServicesAriaLabel": "Explora nuestros servicios",
+  "discoverHowButton": "Descubre cómo",
+  "heroImageAlt": "Sistema de automatización inteligente",
+
+  "servicesBadge": "Nuestros servicios",
+  "servicesSectionTitle": "Soluciones de Automatización y Domótica para Cada Espacio",
+
+  "serviceIoTTitle": "IoT",
+  "serviceIoTDescription": "VITREA: Nuestra marca hogar para simplificar tu vida. Automatizar es: Confort, lujo y seguridad a tu medida. Controla tus sistemas de forma remota, por mandos de voz, reconocimiento facial. Lo que decidas en un solo toque.",
+  "serviceIoTAlt": "Icono IoT",
+
+  "serviceAccessControlTitle": "Control de acceso",
+  "serviceAccessControlDescription": "Sistemas para la apertura de puerta por medio de huella, código, NFC, registrando cada acceso, apertura local o remota.",
+  "serviceAccessControlAlt": "Icono Control de acceso",
+
+  "serviceSmartGatesTitle": "Portones Inteligentes",
+  "serviceSmartGatesDescription": "Instalamos e integramos los sistemas de portones eléctricos y los conectamos a tu red inalámbrica para que tengas el control local y fuera de tu hogar , aperturas por comando remoto y comandos de voz, te apoyamos desde el diseño de planificación hasta la programación de todo el sistema.",
+  "serviceSmartGatesAlt": "Icono Portones Inteligentes",
+
+  "serviceSmartFilmTitle": "Smart film",
+  "serviceSmartFilmDescription": "Somos representantes de HoHofilm: La película protectora para ventanas que te da en cada ambiente según el uso o requerimiento. Reduce el 94% de UV, hasta 96% de transparencia y 84% de ruido. Con tecnología de cambio de estado para privacidad y confort",
+  "serviceSmartFilmAlt": "Icono Smart film",
+
+  "serviceACCTitle": "Aires acondicionados",
+  "serviceACDescription": "Desarrollamos proyectos de aires de confort, precisión , tipo paquete , tipo mochila, split, entre otros. Garantizamos la climatización de tu hogar, oficina, comercio, data center o bien del ambiente que quieras tener confort y calidad de aire.",
+  "serviceACCAlt": "Icono Aires acondicionados",
+
+  "serviceCamerasTitle": "Cámaras",
+  "serviceCamerasDescription": "Eufy security marca que representamos para soluciones de Seguridad inalámbrica. Con cámaras con opción de panel solar , baterías internas recargables y conectividad wifi o bien con chip 4g, gestión local y/o remota de alta resolución hasta 4k de resolución. cámaras interactivas que se integran a sistema de control de acceso, alarma, etc. Formando un sistema completo de seguridad.",
+  "serviceCamerasAlt": "Icono Cámaras",
+
+  "serviceLightingTitle": "Iluminación",
+  "serviceLightingDescription": "Controla la intensidad de la luz, combina distintos colores, planifica el apagado de luces cuando no las estés utilizando o pídele a Alexa que lo haga por ti. Crea escenarios para diferentes necesidades de ambientación. Aprovecha un juego de luces para actividades diferentes. ",
+  "serviceLightingAlt": "Icono Iluminación",
+
+  "serviceNetworksTitle": "Redes",
+  "serviceNetworksDescription": "Trabajamos de la mano con la empresa Eero para la creación de redes inalámbricas mesh , apoyamos en el estudio de redes inalámbricas e instalamos equipos de alta eficiencia para que tu navegación no se vea afectada a la hora de conectare a cada dispositivo inteligente, estos equipos manejan control parental para apoyo en gestionar lo que tus hijos vean hoy en dia en el internet.",
+  "serviceNetworksAlt": "Icono Redes",
+
+  "serviceProfessionalAudioTitle": "Audio profesional",
+  "serviceProfessionalAudioDescription": "Sistemas de audio diseñados para entornos donde se busca una alta calidad de sonido, creamos cines en casa, zonificamos ambientes para escuchar musica en las diferentes áreas en tu hogar, oficina y/o comercio, trabajamos con diferentes marcas",
+  "serviceProfessionalAudioAlt": "Icono Audio profesional",
+
+
+  "aboutSectionTitle": "Nuestro Proceso: Diseñamos, Asesoramos e Instalamos tu Hogar Inteligente",
+  "designFeature": "Diseñamos: Creamos tus proyectos en base a tus gustos y necesidades integrando un ambiente elegante con un ambiente fresco y tecnológico.",
+  "adviseFeature": "Asesoramos: Te brindamos asesoría técnica para poder tomar la mejor elección y cumplir cada una de tus necesidades durante el desarrollo de la obra.",
+  "installFeature": "Instalamos: Realizamos la instalación y configuración de tu equipo, te entregamos memoria técnica y garantía de 2 años, además de garantizarte un buen servicio post-venta.",
+  "aboutImageAlt": "Sistema de control inteligente",
+
+  "partnersBadge": "Nuestros aliados",
+  "partnersSectionTitle": "Trabajamos con las Mejores Marcas en Tecnología para el Hogar Inteligente",
+  
+  "partner1Alt": "Logo Partner 1",
+  "partner2Alt": "Logo Partner 2",
+  "partner3Alt": "Logo Partner 3",
+  "partner4Alt": "Logo Partner 4",
+  "partner5Alt": "Logo Partner 5",
+  "partner6Alt": "Logo Partner 6",
+  "partner7Alt": "Logo Partner 7",
+  "partner8Alt": "Logo Partner 8",
+  "partner9Alt": "Logo Partner 9",
+  "partner10Alt": "Logo Partner 10",
+  "partner11Alt": "Logo Partner 11",
+  "partner12Alt": "Logo Partner 12",
+  "partner13Alt": "Logo Partner 13",
+  "partner14Alt": "Logo Partner 14",
+  "partner15Alt": "Logo Partner 15",
+  "partner16Alt": "Logo Partner 16",
+  "partner17Alt": "Logo Partner 17",
+  "partner18Alt": "Logo Partner 18",
+  "partner19Alt": "Logo Partner 19",
+  "partner20Alt": "Logo Partner 20",
+  "partner21Alt": "Logo Partner 21",
+  "partner22Alt": "Logo Partner 22",
+  "partner23Alt": "Logo Partner 23",
+  "partner24Alt": "Logo Partner 24",
+
+  "organizationName": "V-Connection S.A.",
+  "businessName": "V-Connection S.A.",
+  "addressStreet": "Edificio Torino I , Zona 10, 19-70, 17 Avenida",
+  "addressLocality": "Ciudad de Guatemala",
+  "addressRegion": "Guatemala"
+}

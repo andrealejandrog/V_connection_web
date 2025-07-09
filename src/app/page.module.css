@@ -1,32 +1,10 @@
-/* Paleta de colores del cliente */
+/* app/page.module.css */
 
 .main {
   font-family: 'Inter', sans-serif;
-  color: #0f172a;
-  background: var(--white);
+  color: #0B1C3D; /* Dark text for main content on white background */
+  background: #ffffff; /* Main white background */
   overflow-x: hidden;
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.sectionAnimation {
-  opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.sectionAnimation.in-view {
-  opacity: 1;
-  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 /* Hero Section */
@@ -35,17 +13,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 4rem 6rem;
-  background: linear-gradient(135deg, var(--dark-blue) 0%, #142952 100%);
+  background: linear-gradient(135deg, #0B1C3D 0%, #1a2b4b 100%); /* Degradado azul oscuro */
   position: relative;
+  overflow: hidden; /* Asegura que nada se salga del hero */
 }
 
 .heroContent {
-  position: relative;
+  padding: 4rem;
   z-index: 2;
-  padding: 4rem 8rem;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .heroText {
@@ -53,121 +28,66 @@
 }
 
 .heroTitle {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 2rem;
+  line-height: 1.2;
+  color: #ffffff; /* Título blanco para el hero */
+  margin-bottom: 1.5rem;
 }
 
 .titleGradient {
-  background: linear-gradient(90deg, var(--gold) 0%, var(--light-gold) 100%);
+  background: linear-gradient(90deg, #C7A246 0%, #f0d69b 100%); /* Degradado dorado */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .titleHighlight {
-  position: relative;
-  display: inline-block;
-}
-
-.titleHighlight::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--gold);
-  border-radius: 2px;
+  color: #C7A246; /* Color dorado para el resaltado */
 }
 
 .heroSubtitle {
   font-size: 1.25rem;
-  color: #94a3b8;
-  margin-bottom: 3rem;
+  color: #e0e6f0; /* Subtítulo más claro, casi blanco, sobre fondo oscuro */
+  margin-bottom: 2rem;
   line-height: 1.6;
-}
-
-.buttonGroup {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.ctaButton {
-  background: linear-gradient(90deg, var(--dark-gold) 0%, var(--gold) 100%);
-  color: var(--white);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  transition: all 0.3s ease;
-  border: none;
-  font-weight: 600;
-}
-
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(199, 162, 70, 0.3);
-}
-
-.buttonArrow {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.ctaButton:hover .buttonArrow {
-  transform: translateX(4px);
-}
-
-.secondaryButton {
-  background: transparent;
-  color: var(--gold);
-  border: 2px solid var(--gold);
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.secondaryButton:hover {
-  background: rgba(199, 162, 70, 0.1);
 }
 
 .heroImageWrapper {
   position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  transform: perspective(1000px);
+  height: 100vh;
 }
 
 .heroImageContainer {
   position: relative;
-  height: 600px;
+  width: 100%;
+  height: 100%;
 }
 
 .heroImage {
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.heroImage:hover {
-  transform: scale(1.03) rotateZ(1deg);
 }
 
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(45deg, rgba(11, 28, 61, 0.6) 0%, transparent 100%);
+  background: linear-gradient(45deg, rgba(11, 28, 61, 0.7) 0%, transparent 100%); /* Superposición de imagen con nuevo azul */
 }
 
-/* Servicios Section */
+/* General Section Styles */
+.services, .about, .partners { /* Aplicamos estilos comunes a estas secciones */
+  padding: 8rem 4rem;
+  background: #ffffff; /* Fondo blanco por defecto para secciones */
+  max-width: 100vw; /* Asegura que no haya desbordamiento horizontal */
+  overflow: hidden; /* Corta cualquier contenido que se salga */
+}
+
+/* Para alternar colores de fondo de sección */
 .services {
-  padding: 8rem 6rem;
-  background: #f8fafc;
+    background-color: #f8fafc; /* Ejemplo: un gris claro para la sección de servicios */
 }
 
+
+/* Section Header (para la sección de servicios, etc.) */
 .sectionHeader {
   text-align: center;
   margin-bottom: 4rem;
@@ -175,8 +95,8 @@
 
 .sectionBadge {
   display: inline-block;
-  background: rgba(199, 162, 70, 0.15);
-  color: var(--gold);
+  background: #f0d69b; /* Color de fondo del badge, un dorado más claro */
+  color: #0B1C3D; /* Texto oscuro para el badge */
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
@@ -186,24 +106,21 @@
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--dark-blue);
-  margin-bottom: 1rem;
+  color: #0B1C3D; /* Título de sección oscuro */
+  margin-bottom: 1.5rem;
 }
 
+/* Grid para las Service Cards */
 .servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid; /* Usamos grid para un layout responsivo */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min-width para tarjetas */
+  gap: 2rem; /* Espacio entre tarjetas */
+  max-width: 1200px; /* Ancho máximo para el grid */
+  margin: 0 auto; /* Centrar el grid */
+  padding: 2rem 0; /* Padding interno para separación vertical */
 }
 
-/* About Section */
-.about {
-  padding: 8rem 6rem;
-  background: var(--white);
-}
-
+/* About Content (usado en Cómo trabajamos) */
 .aboutContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -217,256 +134,231 @@
   padding-right: 2rem;
 }
 
-.aboutDescription {
-  color: #64748b;
-  line-height: 1.8;
-  margin-bottom: 2rem;
+.aboutImage {
+  position: relative;
+  height: 500px; /* Altura fija para la imagen del about */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(11, 28, 61, 0.15); /* Sombra con nuevo azul */
 }
 
+/* Features List (en la sección 'Cómo trabajamos') */
 .featuresList {
-  display: grid;
-  gap: 1.5rem;
+  margin: 2rem 0;
+  list-style: none; /* Elimina los puntos predeterminados */
+  padding: 0;
 }
 
 .featureItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Alinea ícono y texto al inicio */
   gap: 1rem;
-  padding: 1.5rem;
-  background: #f8fafc;
-  border-radius: 16px;
-  font-weight: 500;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0; /* Borde sutil */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #4a5568;
 }
 
 .featureIcon {
-  font-size: 1.5rem;
-  color: var(--gold);
+  font-size: 1.8rem; /* Tamaño más grande para los iconos */
+  color: #C7A246; /* Icono de característica dorado */
+  flex-shrink: 0; /* Evita que el icono se encoja */
 }
 
-.aboutImage {
-  position: relative;
-  height: 500px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(11, 28, 61, 0.1);
-}
-
-/* --- Partners Section --- */
+/* Partners Section */
 .partners {
-  padding: 6rem 20px;
-  background: #f8fafc;
-  text-align: center;
+  background-color: #f0f4f8; /* Un fondo diferente para la sección de partners */
 }
 
-.partners .sectionHeader {
-  margin-bottom: 50px;
-}
-
-.partners .sectionBadge {
-  background: rgba(199, 162, 70, 0.15);
-  color: var(--gold);
-}
-
-.partners .sectionTitle {
-  color: var(--dark-blue);
-}
-
-/* Contenedor del mosaico de logos */
 .partnersGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Logos más pequeños y más flexibles */
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
-}
-
-/* Contenedor de cada logo */
-.partnerLogoContainer {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: var(--white);
+  justify-items: center; /* Centra los logos dentro de sus celdas */
+  padding: 2rem 0;
 }
 
-.partnerLogoContainer:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(11, 28, 61, 0.15);
+.partnerLogo {
+  /* No se necesita mucho aquí si PartnerLogo maneja el tamaño internamente con Next/Image fill */
+  height: 80px; /* Altura fija para los contenedores de logo si usan fill */
+  width: 100%; /* Ocupa el ancho completo de la celda */
+  position: relative;
 }
 
-.partnerLogoContainer > img {
-  filter: grayscale(100%) brightness(150%);
-  transition: filter 0.3s ease;
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.partnerLogoContainer:hover > img {
-  filter: grayscale(0%) brightness(100%);
+.ctaButton {
+  background: linear-gradient(90deg, #C7A246 0%, #b38e3e 100%); /* Degradado dorado para CTA */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-/* --- RESPONSIVIDAD --- */
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(199, 162, 70, 0.3); /* Sombra con dorado */
+}
+
+.buttonArrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #C7A246; /* Borde dorado para el botón secundario */
+  border: 2px solid #C7A246; /* Borde dorado para el botón secundario */
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.secondaryButton:hover {
+  background: rgba(199, 162, 70, 0.1); /* Fondo sutil con dorado en hover */
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 3rem 2rem;
     min-height: auto;
   }
 
   .heroContent {
     padding: 2rem;
-    text-align: center;
+    order: 2;
   }
 
-  .heroText {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .heroImageContainer {
-    height: 350px;
-    margin-top: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .buttonGroup {
-    justify-content: center;
-  }
-
-  .services,
-  .about,
-  .partners {
-    padding: 4rem 2rem;
-  }
-
-  .partnersGrid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-  }
-  .partnerLogoContainer {
-    height: 80px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hamburger-menu {
-    display: block;
-  }
-
-  .heroTitle {
-    font-size: 2.2rem;
-  }
-
-  .heroSubtitle {
-    font-size: 1rem;
-  }
-
-  .ctaButton,
-  .secondaryButton {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.8rem;
+  .heroImageWrapper {
+    height: 50vh;
+    order: 1;
   }
 
   .aboutContent {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .aboutText {
-    padding-right: 0;
   }
 
   .aboutImage {
-    height: 350px;
-  }
-
-  .servicesGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .desktop-menu {
-    display: none;
-  }
-
-  .main-content {
-    padding-top: 70px;
-  }
-
-  .partnersGrid {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 15px;
-  }
-  .partnerLogoContainer {
-    height: 60px;
+    height: 400px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero {
-    padding: 2rem 1rem;
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
   }
 
-  .heroTitle {
-    font-size: 1.8rem;
+  .services, .about, .partners {
+    padding: 4rem 2rem;
   }
 
   .buttonGroup {
     flex-direction: column;
-    gap: 1rem;
-  }
-
-  .ctaButton,
-  .secondaryButton {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-
-  .heroImageContainer {
-    height: 250px;
-  }
-
-  .mobile-menu {
-    width: 85%;
   }
 
   .partnersGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .partnerLogoContainer {
-    height: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 
-/* Optimización para motion */
-@media (prefers-reduced-motion: reduce) {
-  .sectionAnimation {
-    transition: none;
-    animation: none;
-    opacity: 1;
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
   }
 
-  .heroImage:hover,
-  .partnerLogoContainer:hover,
-  .ctaButton:hover {
-    transform: none;
+  .sectionTitle {
+    font-size: 2rem;
   }
+}
 
-  .partnerLogoContainer > img {
-    transition: none;
-  }
+/* app/page.module.css */
+
+/* ... todos tus estilos existentes ... */
+
+/* --- Estilos para la Página 404 (not-found.tsx) --- */
+.notFoundPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8fafc; /* Un fondo claro */
+    color: #0B1C3D;
+    padding: 2rem;
+}
+
+.notFoundContent {
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    background-color: #ffffff;
+}
+
+.notFoundTitle {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #C7A246; /* Tu color de resalte */
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.notFoundDescription {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4a5568;
+}
+
+.notFoundSuggestion {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #6a7b8f;
+}
+
+/* Reutilizando tus estilos de botones existentes */
+.notFoundContent .buttonGroup {
+    display: flex;
+    flex-direction: row; /* Mantenerlos en fila en desktop */
+    gap: 1.5rem;
+    justify-content: center; /* Centrar los botones */
+    margin-top: 2rem;
+}
+
+/* Ajuste responsivo para botones en pantallas pequeñas */
+@media (max-width: 480px) {
+    .notFoundTitle {
+        font-size: 3.5rem;
+    }
+    .notFoundDescription {
+        font-size: 1.2rem;
+    }
+    .notFoundContent .buttonGroup {
+        flex-direction: column; /* Apilar los botones en móviles */
+        gap: 1rem;
+    }
+    .notFoundContent .ctaButton,
+    .notFoundContent .secondaryButton {
+        width: 100%; /* Ocupar todo el ancho */
+    }
 }

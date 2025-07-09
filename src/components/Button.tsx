@@ -1,21 +1,19 @@
-// src/components/Button.tsx
 "use client";
 
-import React, { ReactNode } from 'react';
+import React, { ReactNode, MouseEvent } from 'react';
 import Link from 'next/link';
 import styles from './Button.module.css';
 
 interface ButtonProps {
   children: ReactNode;
   href?: string;
-  onClick?: () => void;
-  // Make sure 'secondary' is here if you use it in the Header
+  onClick?: (e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
   variant?: 'text' | 'outline' | 'solid' | 'secondary';
   className?: string;
   ariaLabel?: string;
   fullWidth?: boolean;
   type?: 'button' | 'submit' | 'reset';
-  style?: React.CSSProperties; // <--- IMPORTANT CHANGE: Add this line!
+  style?: React.CSSProperties;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -27,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   ariaLabel,
   fullWidth,
   type = 'button',
-  style, // <--- IMPORTANT CHANGE: Destructure the style prop!
+  style,
 }) => {
   const buttonClasses = `${styles.button} ${styles[variant]} ${className || ''} ${fullWidth ? styles.fullWidth : ''}`;
 
@@ -37,7 +35,12 @@ const Button: React.FC<ButtonProps> = ({
         href={href}
         className={buttonClasses}
         aria-label={ariaLabel}
-        style={style} // <--- IMPORTANT CHANGE: Pass style to the Link!
+        style={style}
+        onClick={(e) => {
+          if (onClick) {
+            onClick(e);
+          }
+        }}
       >
         {children}
       </Link>
@@ -50,7 +53,7 @@ const Button: React.FC<ButtonProps> = ({
       className={buttonClasses}
       aria-label={ariaLabel}
       type={type}
-      style={style} // <--- IMPORTANT CHANGE: Pass style to the button!
+      style={style}
     >
       {children}
     </button>

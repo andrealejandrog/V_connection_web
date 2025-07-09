@@ -1,0 +1,19 @@
+{
+  "heroTitle": "Smart Gates",
+  "heroText": "Automate and secure access to your home with our advanced smart gate systems, providing convenience, control, and protection.",
+  "ctaButton": "SEE MORE",
+  "featureTitle": "Advanced control and security for your accesses",
+  "featureSubtitle": "SMART GATES",
+  "featureText1": "Control your gates from anywhere with your smartphone, adding convenience and peace of mind to your daily life.",
+  "featureText2": "Integrate robust security systems that detect and respond to any unusual activity in your accesses.",
+  "featureCard1Title": "Fingerprint Access",
+  "featureCard1Text": "Forgetting keys is a thing of the past, with our smart locks you can enter your home accurately and securely just by placing your finger on the reader.",
+  "featureCard2Title": "Remote Control",
+  "featureCard2Text": "Control and secure your accesses with the ease of a remote control, providing comfort and protection from any point within range.",
+  "featureCard3Title": "Smart Auto-Closing",
+  "featureCard3Text": "No more worries about whether you left the gate open. Our systems detect when it is unlocked and automatically close it after a predefined time, ensuring your peace of mind.",
+  "mainImageAlt": "Automatic gate with remote control",
+  "featureCard1ImageAlt": "Fingerprint door lock",
+  "featureCard2ImageAlt": "Garage door remote control",
+  "featureCard3ImageAlt": "Automatic gate closing"
+}

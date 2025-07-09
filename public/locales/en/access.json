@@ -1,0 +1,21 @@
+{
+  "heroTitle": "ACCESS CONTROL",
+  "heroText": "Feel safe with our alarm and surveillance systems that you can monitor from your phone wherever you are.",
+  "ctaButton": "SEE MORE",
+  "featureTitle": "Secure and easy-to-access biometric systems",
+  "featureSubtitle": "Access Control",
+  "featureText": "Systems for door opening by fingerprint, code, NFC, recording each access, local or remote opening.",
+  "featureCard1Title": "A key you can't lose",
+  "featureCard1Text": "Forgetting keys is a thing of the past, with our smart locks you can enter your home accurately and securely just by placing your finger on the reader.",
+  "featureCard2Title": "Remote locking",
+  "featureCard2Text": "Lock your locks even if you are not at home with our mobile application.",
+  "featureCard3Title": "Automatic closing",
+  "featureCard3Text": "Say goodbye to that \"Wait, did I close the door this morning?\" moment thanks to Smart Lock's auto-lock feature. The <span class='highlight-term'>grosocopio</span> and the <span class='highlight-term'>geomagnetic chip</span> detect when your door is unlocked and activate the lock after a set time.",
+  "galleryTitle": "Our Implementations",
+  "gallerySubtitle": "Access control solutions in action",
+  "overlayText": "View full gallery",
+  "overlayHint": "Click to explore our implementations",
+  "modalImageTitle": "Access Control",
+  "imageAlt": "Access Control",
+  "videoNotSupported": "Your browser does not support the video tag."
+}

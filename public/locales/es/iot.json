@@ -1,0 +1,22 @@
+{
+  "heroTitle": "Internet de las cosas",
+  "heroText": "Vive la experiencia de automatizar tu residencia u oficina. Optimiza las funciones e interacción con tus equipos.",
+  "ctaButton": "VER MÁS",
+  "featureTitle": "Somos tu mejor opción",
+  "featureSubtitle": "Automatización",
+  "featureText": "VITREA es un protocolo abierto que permite integrarse e interactuar con diferentes equipos de diferentes marcas, por lo que automatizar tu residencia u oficina se vuelve algo que sueñas. Te imaginas programar escenarios dependiendo de la actividad que quieras realizar. Tu imaginación es el límite.",
+  "scenariosTitle": "Escenarios de Automatización",
+  "scenario1Title": "Sistema de riego en verano",
+  "scenario1Text": "Programa que en distintas estaciones del año tu sistema de riego se active a ciertos horarios y días, sin necesidad de interacción manual.",
+  "scenario2Title": "Escenario de película",
+  "scenario2Text": "Luces al 50%, música ambiental, climatización perfecta. Al iniciar la película: luces se atenúan, música se apaga, sonido de cine se activa y clima se ajusta.",
+  "scenario3Title": "Escenario nocturno",
+  "scenario3Text": "Camino iluminado suavemente hasta la cocina cuando detecta movimiento nocturno, sin molestar a otros dormitorios.",
+  "galleryTitle": "Nuestros Proyectos",
+  "gallerySubtitle": "Implementaciones reales con tecnología IoT",
+  "overlayText": "Ver galería completa",
+  "overlayHint": "Click para explorar nuestros proyectos",
+  "demoTitle": "Vea cómo funciona",
+  "modalImageTitle": "Proyecto IoT",
+  "imageAlt": "Sistema de automatización IoT"
+}

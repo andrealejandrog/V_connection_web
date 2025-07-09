@@ -1,0 +1,21 @@
+{
+  "heroTitle": "CONTROL DE ACCESO",
+  "heroText": "Siéntete seguro con nuestros sistemas de alarma y vigilancia los cuales puedes monitorear desde tu teléfono donde quiera que estés.",
+  "ctaButton": "VER MÁS",
+  "featureTitle": "Sistemas biométricos seguros y de fácil acceso",
+  "featureSubtitle": "Control de Acceso",
+  "featureText": "Sistemas para la apertura de puerta por medio de huella, código, NFC, registrando cada acceso, apertura local o remota.",
+  "featureCard1Title": "Una llave imposible de perder",
+  "featureCard1Text": "Olvidar las llaves es cosa del pasado, con nuestras cerraduras inteligentes podrás ingresar a tu casa de manera precisa y segura solo colocando tu huella en el lector.",
+  "featureCard2Title": "Bloqueo remoto",
+  "featureCard2Text": "Bloquea tus cerraduras aunque no estés en tu casa con nuestra aplicación móvil.",
+  "featureCard3Title": "Cierre automático",
+  "featureCard3Text": "Dile adiós a ese \"Espera, ¿cerré la puerta esta mañana?\" momento gracias a la función de bloqueo automático de Smart Lock. El <span class='highlight-term'>grosocopio</span> y el <span class='highlight-term'>chip geomagnético</span> detectan cuando tu puerta está desbloqueada y activan el bloqueo después de un tiempo establecido.",
+  "galleryTitle": "Nuestras Implementaciones",
+  "gallerySubtitle": "Soluciones de control de acceso en acción",
+  "overlayText": "Ver galería completa",
+  "overlayHint": "Click para explorar nuestras implementaciones",
+  "modalImageTitle": "Control de Accesos",
+  "imageAlt": "Control de Accesos",
+  "videoNotSupported": "Tu navegador no soporta el elemento de video."
+}
